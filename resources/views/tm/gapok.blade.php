@@ -60,7 +60,8 @@
                                         <td>
                                             <!-- Button trigger modal -->
                                             <!-- Button trigger modal -->
-                                            <a href="/pegawai/tmgapok/hapus/{{ $agm->kode_gapok }}"
+                                            {{-- <a href="/pegawai/tmgapok/hapus/{{ $agm->kode_gapok }}" --}}
+                                            <a href="{{ route('tm.gapok.hapus', $agm->kode_gapok) }}"
                                                 class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
                                         </td>
@@ -89,7 +90,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="card p-3">
-                        <form action="/pegawai/tmgapok/tambah/proses" method="post">
+                        {{-- <form action="/pegawai/tmgapok/tambah/proses" method="post"> --}}
+                        <form action="{{ route('tm.gapok.tambah') }}" method="post">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-6">

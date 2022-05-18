@@ -190,7 +190,8 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 {{-- <a class="dropdown-item" href="/pegawai/edit/{{ $p->id_peg }}"> --}}
-                                <a class="dropdown-item" href="/profile/show/">
+                                {{-- <a class="dropdown-item" href="/profile/show/"> --}}
+                                <a class="dropdown-item" href="{{ route('profile.show') }}">
                                     {{ __('Profil Anda') }}
                                     <i class="fas fa-address-card"></i>
                                 </a>

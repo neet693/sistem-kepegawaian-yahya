@@ -48,8 +48,10 @@
                                         <td>
                                             <!-- Button trigger modal -->
                                             <!-- Button trigger modal -->
-                                            <a href="/data/tmagama/hapus/{{ $agm->kode_agama }}" class="btn btn-danger"><i
-                                                    class="fa fa-trash"></i></a>
+                                            {{-- <a href="/data/tmagama/hapus/{{ $agm->kode_agama }}" class="btn btn-danger"> --}}
+                                            <a href="{{ route('tm.agama.hapus', $agm->kode_agama) }}"
+                                                class="btn btn-danger">
+                                                <i class="fa fa-trash"></i></a>
 
                                         </td>
                                     </tr>
@@ -77,7 +79,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="card p-3">
-                        <form action="/data/tmagama/tambah/proses" method="post">
+                        {{-- <form action="/data/tmagama/tambah/proses" method="post"> --}}
+                        <form action="{{ route('tm.agama.tambah') }}" method="post">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-6">

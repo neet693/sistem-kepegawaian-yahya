@@ -648,7 +648,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/pegawai/anak/tambah/proses" method="post">
+                    {{-- <form action="/pegawai/anak/tambah/proses" method="post"> --}}
+                    <form action="{/pegawai/anak/tambah/proses}" method="post">
                         {{ csrf_field() }}
                         <input type="hidden" name="id_peg" value="{{ $pegawai->id_peg }}">
                         <div class="form-row">
@@ -903,8 +904,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             : @foreach ($pegawai->riwayatdiklat as $rd)
-                                                <a class="btn btn-primary btn-sm"
-                                                    href="/pegawai/riwayatdiklat/editpage/{{ $rd->id_diklat }}/{{ $pegawai->id_peg }}">Edit</a>
+                                                <a class="btn btn-primary btn-sm" {{-- href="/pegawai/riwayatdiklat/editpage/{{ $rd->id_diklat }}/{{ $pegawai->id_peg }}">Edit</a> --}}
+                                                    href="{{ route('pegawai.diklat.editpage', $rd->id_diklat, $pegawai->id_peg) }}">Edit</a>
                                             @endforeach
                                         </div>
                                     </div>
@@ -916,7 +917,8 @@
                         </div>
                         <div class="tab-pane fade" id="pills-tambah" role="tabpanel" aria-labelledby="pills-tambah-tab">
                             <!-- Start tambah data diklat -->
-                            <form action="/pegawai/diklat/tambah" method="POST">
+                            {{-- <form action="/pegawai/diklat/tambah" method="POST"> --}}
+                            <form action="{{ route('pegawai.diklat.tambah') }}" method="POST">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="id_peg" value="{{ $pegawai->id_peg }}">
                                 <div class="form-row">
@@ -992,7 +994,8 @@
                             @if ($edit !== null)
                                 <!-- start hapus diklat -->
                                 @foreach ($pegawai->riwayatdiklat as $rd)
-                                    <form action="/pegawai/diklat/hapus/{{ $rd->id_diklat }}" method="POST">
+                                    {{-- <form action="/pegawai/diklat/hapus/{{ $rd->id_diklat }}" method="POST"> --}}
+                                    <form action="{{ route('pegawai.diklat.hapus', $rd->id_diklat) }}" method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id_peg" value="{{ $pegawai->id_peg }}">
                                         <button type="submit" class="btn btn-danger btn-sm m-2">Hapus
@@ -1108,8 +1111,8 @@
                                         </div>
                                         <div class="col-md-7">
                                             : @foreach ($pegawai->riwayatgapok as $rg)
-                                                <a class="btn btn-primary btn-sm"
-                                                    href="/pegawai/gapok/editpage/{{ $rg->id_gapok }}/{{ $pegawai->id_peg }}">
+                                                <a class="btn btn-primary btn-sm" {{-- href="/pegawai/gapok/editpage/{{ $rg->id_gapok }}/{{ $pegawai->id_peg }}"> --}}
+                                                    href="{{ route('pegawai.gapok.editpage', $rg->id_gapok, $pegawai->id_peg) }}">
                                                     Edit </a>
                                             @endforeach
                                         </div>
@@ -1124,7 +1127,8 @@
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <div class="card p-3">
                                 <!-- card -->
-                                <form action="/pegawai/gapok/tambah" method="POST">
+                                {{-- <form action="/pegawai/gapok/tambah" method="POST"> --}}
+                                <form action="{{ route('pegawai.gapok.tambah') }}" method="POST">
                                     {{ csrf_field() }}
 
                                     <input type="hidden" name="id_peg" value="{{ $pegawai->id_peg }}">
@@ -1188,7 +1192,8 @@
                             @if ($pegawai->riwayatgapok->count() !== 0)
                                 <!-- start hapus diklat -->
                                 @foreach ($pegawai->riwayatgapok as $rg)
-                                    <form action="/pegawai/gapok/hapus/{{ $rg->id_gapok }}" method="POST">
+                                    {{-- <form action="/pegawai/gapok/hapus/{{ $rg->id_gapok }}" method="POST"> --}}
+                                    <form action="{{ route('pegawai.gapok.hapus', $rg->id_gapok) }}" method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id_peg" value="{{ $pegawai->id_peg }}">
                                         <button type="submit" class="btn btn-danger m-2">Hapus gapok dgn SK
@@ -1293,8 +1298,8 @@
                                         </div>
                                         <div class="col-md-7">
                                             : @foreach ($pegawai->riwayatindisipliner as $rid)
-                                                <a class="btn btn-primary btn-sm"
-                                                    href="/pegawai/hukuman/editpage/{{ $rid->id_hukuman }}/{{ $pegawai->id_peg }}">Edit</a>
+                                                <a class="btn btn-primary btn-sm" {{-- href="/pegawai/hukuman/editpage/{{ $rid->id_hukuman }}/{{ $pegawai->id_peg }}">Edit</a> --}}
+                                                    href="{{ route('pegawai.hukuman.editpage', $rid->id_hukuman, $pegawai->id_pegawai) }}">Edit</a>
                                             @endforeach
                                         </div>
                                     </div>
@@ -1309,7 +1314,8 @@
                             <div class="card p-3">
                                 <!-- start tambah hukuman -->
 
-                                <form action="/pegawai/hukuman/tambah" method="post">
+                                {{-- <form action="/pegawai/hukuman/tambah" method="post"> --}}
+                                <form action="{{ route('pegawai.hukuman.tambah') }}" method="post">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="id_peg" value="{{ $pegawai->id_peg }}">
                                     <div class="row">
@@ -1357,7 +1363,8 @@
                             @if ($pegawai->riwayatindisipliner->count() !== 0)
                                 <!-- start hapus diklat -->
                                 @foreach ($pegawai->riwayatindisipliner as $rid)
-                                    <form action="/pegawai/hukuman/hapus/{{ $rid->id_hukuman }}" method="POST">
+                                    {{-- <form action="/pegawai/hukuman/hapus/{{ $rid->id_hukuman }}" method="POST"> --}}
+                                    <form action="{{ route('pegawai.hukuman.hapus', $rid->hukuman) }}" method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id_peg" value="{{ $pegawai->id_peg }}">
                                         <button type="submit" class="btn btn-danger btn-sm m-2">Hapus
@@ -1528,8 +1535,8 @@
                                         </div>
                                         <div class="col-md-7">
                                             : @foreach ($pegawai->riwayatjabatan as $rjbt)
-                                                <a class="btn btn-primary btn-sm"
-                                                    href="/pegawai/jabatan/editpage/{{ $rjbt->id_jabatan }}/{{ $pegawai->id_peg }}">Edit</a>
+                                                <a class="btn btn-primary btn-sm" {{-- href="/pegawai/jabatan/editpage/{{ $rjbt->id_jabatan }}/{{ $pegawai->id_peg }}">Edit</a> --}}
+                                                    href="{{ route('pegawai.jabatan.editpage', $rjbt->id_jabatan, $pegawai->id_peg) }}">Edit</a>
                                             @endforeach
                                         </div>
                                     </div>
@@ -1545,7 +1552,8 @@
 
                             <div class="card p-3">
                                 <!-- card -->
-                                <form action="/pegawai/jabatan/tambah" method="post">
+                                {{-- <form action="/pegawai/jabatan/tambah" method="post"> --}}
+                                <form action="{{ route('pegawai.jabatan.tambah') }}" method="post">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="id_peg" value="{{ $pegawai->id_peg }}">
 
@@ -1610,7 +1618,9 @@
                             @if ($pegawai->riwayatjabatan->count() !== 0)
                                 <!-- start hapus diklat -->
                                 @foreach ($pegawai->riwayatjabatan as $rjbt)
-                                    <form action="/pegawai/jabatan/hapus/{{ $rjbt->id_jabatan }}" method="POST">
+                                    {{-- <form action="/pegawai/jabatan/hapus/{{ $rjbt->id_jabatan }}" method="POST"> --}}
+                                    <form action="{{ route('pegawai.jabatan.hapus', $rjbt->id_jabatan) }}"
+                                        method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id_peg" value="{{ $rjbt->id_peg }}">
                                         <button type="submit" class="btn btn-danger btn-sm m-2">Hapus riwayat dgn no. sk
@@ -1765,8 +1775,8 @@
                                         </div>
                                         <div class="col-md-7">
                                             : @foreach ($pegawai->riwayatjabatanf as $rjbtf)
-                                                <a class="btn btn-primary btn-sm"
-                                                    href="/pegawai/jabatanfungsional/editpage/{{ $rjbtf->id_jabatanf }}/{{ $pegawai->id_peg }}">Edit</a>
+                                                <a class="btn btn-primary btn-sm" {{-- href="/pegawai/jabatanfungsional/editpage/{{ $rjbtf->id_jabatanf }}/{{ $pegawai->id_peg }}">Edit</a> --}}
+                                                    href="{{ route('pegawai.jabatanfungsional.editpage', $rjbtf->id_jabatanf, $pegawai_id_peg) }}">Edit</a>
                                             @endforeach
                                         </div>
                                     </div>
@@ -1780,7 +1790,8 @@
                         <div class="tab-pane fade" id="nav-profile3" role="tabpanel" aria-labelledby="nav-profile-tab3">
                             <div class="card p-3">
                                 <!-- card -->
-                                <form action="/pegawai/jabatanfungsional/tambah" method="post">
+                                {{-- <form action="/pegawai/jabatanfungsional/tambah" method="post"> --}}
+                                <form action="{{ route('pegawai.jabatanfungsional.tambah') }}" method="post">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="id_peg" value="{{ $pegawai->id_peg }}">
 
@@ -1846,8 +1857,8 @@
                             @if ($pegawai->riwayatjabatanf->count() !== 0)
                                 <!-- start hapus diklat -->
                                 @foreach ($pegawai->riwayatjabatanf as $rjbtf)
-                                    <form action="/pegawai/jabatanfungsional/hapus/{{ $rjbtf->id_jabatanf }}"
-                                        method="POST">
+                                    {{-- <form action="/pegawai/jabatanfungsional/hapus/{{ $rjbtf->id_jabatanf }}" --}}
+                                    <form action="{{ route('pegawai.jabatanfungsional.hapus') }}" method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id_peg" value="{{ $rjbtf->id_peg }}">
                                         <button type="submit" class="btn btn-danger btn-sm m-2">Hapus Jabatan dgn no. sk
@@ -2004,8 +2015,8 @@
                                         </div>
                                         <div class="col-md-8">
                                             : @foreach ($pegawai->riwayatjabatanft as $rjbtft)
-                                                <a class="btn btn-primary btn-sm"
-                                                    href="/pegawai/jabatanfungsionalt/editpage/{{ $rjbtft->id_jbtft }}/{{ $pegawai->id_peg }}">Edit</a>
+                                                <a class="btn btn-primary btn-sm" {{-- href="/pegawai/jabatanfungsionalt/editpage/{{ $rjbtft->id_jbtft }}/{{ $pegawai->id_peg }}">Edit</a> --}}
+                                                    href="{{ route('pegawai.jabatanfungsionalt.editpage', $rjbtft->id_jbtft, $pegawai->id_peg) }}">Edit</a>
                                             @endforeach
                                         </div>
                                     </div>
@@ -2019,7 +2030,8 @@
                         <div class="tab-pane fade" id="nav-profile31" role="tabpanel" aria-labelledby="nav-profile-tab31">
                             <div class="card p-3">
                                 <!-- card -->
-                                <form action="/pegawai/jabatanfungsionalt/tambah" method="post">
+                                {{-- <form action="/pegawai/jabatanfungsionalt/tambah" method="post"> --}}
+                                <form action="{{ route('pegawai.jabatanfungsionalt.tambah') }}" method="post">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="id_peg" value="{{ $pegawai->id_peg }}">
 
@@ -2069,7 +2081,8 @@
                             @if ($pegawai->riwayatjabatanft->count() !== 0)
                                 <!-- start hapus diklat -->
                                 @foreach ($pegawai->riwayatjabatanft as $rjbtft)
-                                    <form action="/pegawai/jabatanfungsionalt/hapus/{{ $rjbtft->id_jbtft }}"
+                                    {{-- <form action="/pegawai/jabatanfungsionalt/hapus/{{ $rjbtft->id_jbtft }}" --}}
+                                    <form action="{{ route('pegawai.jabatanfungsionalt.hapus', $rjbtft->id_jbtft) }}"
                                         method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id_peg" value="{{ $rjbtft->id_peg }}">

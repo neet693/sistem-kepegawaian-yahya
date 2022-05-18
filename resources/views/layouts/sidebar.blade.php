@@ -54,7 +54,8 @@
             @if (Auth::user()->role_id == 1)
                 <li class="nav-item " data-toggle="tooltip" data-placement="right">
                     <div class=" shadow-lg">
-                        <a class="nav-link collapsed text-white" href="/list">
+                        {{-- <a class="nav-link collapsed text-white" href="/list"> --}}
+                        <a class="nav-link collapsed text-white" href="{{ route('list') }}">
                             <i class="fas fa-users text-white"></i>
                             <span> Pegawai</span>
                         </a>
@@ -73,15 +74,24 @@
                             data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <h6 class="collapse-header">Master :</h6>
-                                <a class="collapse-item" href="/data/tmagama/tambah">Agama</a>
-                                <a class="collapse-item" href="/pegawai/tmdiklat/tambah">Diklat</a>
-                                <a class="collapse-item" href="/pegawai/tmgapok/tambah">Gapok</a>
-                                <a class="collapse-item" href="/pegawai/tmgolongan/tambah">Golongan</a>
-                                <a class="collapse-item" href="/pegawai/tmjabatans/tambah">Jabatan Struktural</a>
-                                <a class="collapse-item" href="/pegawai/tmjabatanf/tambah">Jabatan Fungsional</a>
-                                <a class="collapse-item" href="/pegawai/tmjabatanft/tambah">Jabatan Tambahan</a>
-                                <a class="collapse-item" href="/data/tmpendidikan/tambah">Pendidikan</a>
-                                <a class="collapse-item" href="/data/tmunitkerja/tambah">Unit Kerja</a>
+                                {{-- <a class="collapse-item" href="/data/tmagama/tambah">Agama</a> --}}
+                                <a class="collapse-item" href="{{ route('agama.list') }}">Agama</a>
+                                {{-- <a class="collapse-item" href="/pegawai/tmdiklat/tambah">Diklat</a> --}}
+                                <a class="collapse-item" href="{{ route('diklat.list') }}">Diklat</a>
+                                {{-- <a class="collapse-item" href="/pegawai/tmgapok/tambah">Gapok</a> --}}
+                                <a class="collapse-item" href="{{ route('gapok.list') }}">Gapok</a>
+                                {{-- <a class="collapse-item" href="/pegawai/tmgolongan/tambah">Golongan</a> --}}
+                                <a class="collapse-item" href="{{ route('golongan.list') }}">Golongan</a>
+                                {{-- <a class="collapse-item" href="/pegawai/tmjabatans/tambah">Jabatan Struktural</a> --}}
+                                <a class="collapse-item" href="{{ route('jabatans.list') }}">Jabatan Struktural</a>
+                                {{-- <a class="collapse-item" href="/pegawai/tmjabatanf/tambah">Jabatan Fungsional</a> --}}
+                                <a class="collapse-item" href="{{ route('jabatanf.list') }}">Jabatan Fungsional</a>
+                                {{-- <a class="collapse-item" href="/pegawai/tmjabatanft/tambah">Jabatan Tambahan</a> --}}
+                                <a class="collapse-item" href="{{ route('jabatanft.list') }}">Jabatan Tambahan</a>
+                                {{-- <a class="collapse-item" href="/data/tmpendidikan/tambah">Pendidikan</a> --}}
+                                <a class="collapse-item" href="{{ route('pendidikan.list') }}">Pendidikan</a>
+                                {{-- <a class="collapse-item" href="/data/tmunitkerja/tambah">Unit Kerja</a> --}}
+                                <a class="collapse-item" href="{{ route('unitkerja.list') }}">Unit Kerja</a>
                             </div>
                         </div>
                     </div>
@@ -99,7 +109,8 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right">
                 <div class=" shadow-lg ">
-                    <a class="nav-link text-white" href="/pegawai/grafik">
+                    {{-- <a class="nav-link text-white" href="/pegawai/grafik"> --}}
+                    <a class="nav-link text-white" href="{{ route('grafik.list') }}">
                         <i class="fas fa-fw fa-chart-area text-white"></i>
                         <span>Grafik Kepegawaian</span></a>
             </li>

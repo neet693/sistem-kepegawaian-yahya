@@ -48,7 +48,8 @@
                                         <td>
                                             <!-- Button trigger modal -->
                                             <!-- Button trigger modal -->
-                                            <a href="/pegawai/tmdiklat/hapus/{{ $d->kode_diklat }}"
+                                            {{-- <a href="/pegawai/tmdiklat/hapus/{{ $d->kode_diklat }}" --}}
+                                            <a href="{{ route('tm.diklat.hapus', $d->kode_diklat) }}"
                                                 class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
                                         </td>
@@ -77,7 +78,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="card p-3">
-                        <form action="/pegawai/tmdiklat/tambah/proses" method="post">
+                        {{-- <form action="/pegawai/tmdiklat/tambah/proses" method="post"> --}}
+                        <form action="{{ route('tm.diklat.tambah') }}" method="post">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-6">

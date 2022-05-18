@@ -52,7 +52,8 @@
                                     @foreach ($pegawai as $p)
                                         <tr role="row" class="odd">
                                             <td class="sorting_1">
-                                                <a href="/pegawai/profile/{{ $p->id_peg }}" target="_blank">
+                                                {{-- <a href="/pegawai/profile/{{ $p->id_peg }}" target="_blank"> --}}
+                                                <a href="{{ route('pegawai.profile', $p->id_peg) }}" target="_blank">
                                                     <img src="foto/{{ $p->foto }}" width="100px" />
                                                 </a>
                                             </td>
@@ -68,7 +69,7 @@
                                             </td>
                                             <td>{{ $p->no_telp }}</td>
                                             <td><a title="Lihat Detail {{ $p->nama }}" class="btn btn-secondary"
-                                                    href="/pegawai/profile/{{ $p->id_peg }}"><i
+                                                    href="{{ route('pegawai.profile', $p->id_peg) }}"><i
                                                         class="fa fa-list"></i></a>
                                                 <button title="Edit {{ $p->nama }}" type="button"
                                                     class="btn btn-primary" data-toggle="modal"
@@ -137,7 +138,8 @@
                                                             <div class="tab-pane fade show active"
                                                                 id="home{{ $p->id_peg }}" role="tabpanel"
                                                                 aria-labelledby="home-tab{{ $p->id_peg }}">
-                                                                <form action="/pegawai/edit/{{ $p->id_peg }}"
+                                                                {{-- <form action="/pegawai/edit/{{ $p->id_peg }}" --}}
+                                                                <form action="{{ route('pegawai.edit', $p->id_peg) }}"
                                                                     method="post" enctype="multipart/form-data">
                                                                     {{ csrf_field() }}
 
@@ -424,7 +426,8 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                             data-dismiss="modal">Tidak</button>
-                                                        <a href="/pegawai/hapus/{{ $p->id_peg }}"
+                                                        {{-- <a href="/pegawai/hapus/{{ $p->id_peg }}" --}}
+                                                        <a href="{{ route('pegawai.hapus', $p->id_peg) }}"
                                                             class="btn btn-primary">Iya</a>
                                                     </div>
                                                 </div>
@@ -454,7 +457,9 @@
                                 <div class="modal-body">
                                     <!-- form -->
 
-                                    <form action="/pegawai/tambah/proses" method="POST" enctype="multipart/form-data">
+                                    {{-- <form action="/pegawai/tambah/proses" method="POST" enctype="multipart/form-data"> --}}
+                                    <form action="{{ route('pegawai.tambah') }}" method="POST"
+                                        enctype="multipart/form-data">
                                         {{ csrf_field() }}
 
                                         <nav>
