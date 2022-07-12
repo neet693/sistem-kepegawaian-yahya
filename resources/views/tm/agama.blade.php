@@ -1,4 +1,4 @@
-@extends('layouts.induk')
+@extends('layouts.fix')
 @section('title', 'SKYPEG - Agama')
 @section('konten')
     <div class="container-fluid">
@@ -14,9 +14,8 @@
             </div>
         </div>
 
-        <div class="card p-3">
+        <div class="card p-3 mb-3">
             <!-- card -->
-
             <div class="table-responsive">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalTambah">
@@ -47,7 +46,6 @@
                                         <td>{{ $agm->agama }}</td>
                                         <td>
                                             <!-- Button trigger modal -->
-                                            <!-- Button trigger modal -->
                                             {{-- <a href="/data/tmagama/hapus/{{ $agm->kode_agama }}" class="btn btn-danger"> --}}
                                             <a href="{{ route('tm.agama.hapus', $agm->kode_agama) }}"
                                                 class="btn btn-danger">
@@ -57,10 +55,10 @@
                                     </tr>
                                 @endforeach
                             </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-
             <!-- end card -->
         </div>
 

@@ -1,4 +1,4 @@
-@extends('layouts.induk')
+@extends('layouts.fix')
 @section('title', ' Grafik Data Karyawan')
 @section('konten')
     <div class="container-fluid mb-4">
@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="card p-3">
+        <div class="card p-3 mb-3">
             <!-- start tambah jabatan -->
 
 
@@ -172,6 +172,5 @@
             </div>
 
         </div>
-    </div>
     </div>
 @endsection

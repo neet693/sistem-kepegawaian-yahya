@@ -1,5 +1,5 @@
-@extends('layouts.induk')
-@section('title', 'SKYPEG - gaji Pokok')
+@extends('layouts.fix')
+@section('title', 'SKYPEG - Gaji Pokok')
 @section('konten')
     <div class="container-fluid">
         <div class="row">
@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="card p-3">
+        <div class="card p-3 mb-3">
             <!-- card -->
 
             <div class="table-responsive">
@@ -68,6 +68,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

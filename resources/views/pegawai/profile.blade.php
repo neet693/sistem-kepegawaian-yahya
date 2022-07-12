@@ -1,4 +1,4 @@
-@extends('layouts.induk')
+@extends('layouts.fix')
 @section('title', 'SKYPEG - Data Karyawan')
 @section('konten')
     <div class="container-fluid">
@@ -20,42 +20,82 @@
             </div>
         @endif
 
-        <!-- Nav Link Profile -->
-        <div class="row">
-            <div class="col-md">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-                        aria-controls="v-pills-home" aria-selected="true">Profile</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-                        aria-controls="v-pills-profile" aria-selected="false">Suami Istri</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
-                        role="tab" aria-controls="v-pills-messages" aria-selected="false">Anak</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
-                        role="tab" aria-controls="v-pills-settings" aria-selected="false">Ortu</a>
-                </div>
-            </div>
-            <!-- End Nav Link Profile -->
-
-            <!-- Short Profile -->
-            <div class="col-md-2,5">
-                <div class="card shadow mb-2">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary text-center">{{ $pegawai->nama }}</h6>
+        <div class="col">
+            <div class="row">
+                <!-- Nav Link Profile -->
+                <div class="col-md-3">
+                    <!-- Collapsable Card Example -->
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Accordion -->
+                        <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
+                            role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                            <h6 class="m-0 font-weight-bold text-primary">Navigation Bar Pegawai</h6>
+                        </a>
+                        <!-- Card Content - Collapse -->
+                        <div class="collapse show" id="collapseCardExample">
+                            <div class="card-body">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                    aria-orientation="vertical">
+                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                                        role="tab" aria-controls="v-pills-home" aria-selected="true">Profile</a>
+                                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                                        role="tab" aria-controls="v-pills-profile" aria-selected="false">Suami Istri</a>
+                                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
+                                        href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
+                                        aria-selected="false">Anak</a>
+                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
+                                        href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                                        aria-selected="false">Ortu</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <img src="../../foto/{{ $pegawai->foto }}" width="180px" />
-                        <hr>
-                        <i class="fa fa-address-card"></i> {{ $pegawai->unitkerja->nama_unit }}
-                        <hr>
-                        <i class="fa fa-phone"></i> {{ $pegawai->no_telp }}
-                        {{-- <hr>
-                        <i class="fa fa-envelope"></i> {{ $pegawai->sts_pegawai }} --}}
+                </div>
+                <!-- row -->
+            </div>
+
+            <div class="row">
+                <!-- Nav Link Riwayat -->
+                <div class="col-md-3">
+                    <!-- Collapsable Card Example -->
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Accordion -->
+                        <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
+                            role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                            <h6 class="m-0 font-weight-bold text-primary">Riwayat Navigation Bar</h6>
+                        </a>
+                        <!-- Card Content - Collapse -->
+                        <div class="collapse show" id="collapseCardExample">
+                            <div class="card-body">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                    aria-orientation="vertical">
+                                    @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 2)
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#ModalDiklat">Diklat</button>
+                                        <button type="button" class="btn btn-success" data-toggle="modal"
+                                            data-target="#ModalGapok">Gapok</button>
+                                        <button type="button" class="btn btn-warning" data-toggle="modal"
+                                            data-target="#ModalHukuman">Hukuman</button>
+                                        <hr>
+                                        <!-- row 2 -->
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#ModalJabatan">Jabatan</button>
+                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#ModalJabatanfungsional">Jabatan Fungsional</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#ModalJabatanfungsionaltambahan">Jabatan
+                                            Tambahan</button>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- Riwayat Pegawai -->
+                <!-- row -->
             </div>
-            <!-- End Short Profile -->
 
-            <div class="col-md-7">
+            {{-- <div class="row-cols-lg-auto">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- Panel Data Lengkap -->
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
@@ -65,6 +105,12 @@
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary text-center">Data Lengkap
                                         {{ $pegawai->nama }}</h6>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-4"> Profile Photo</div>
+                                    <div class="col-md-8"> : <img src="../../foto/{{ $pegawai->foto }}"
+                                            width="180px" />
+                                    </div>
                                 </div>
                                 <!-- row NIP -->
                                 <div class="row">
@@ -201,7 +247,489 @@
                     <!-- End Panel Data Lengkap -->
 
                     <!-- Panel Data Istri -->
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+
+                        <div class="col-md-10">
+                            <div class="card shadow mb-4 p-3">
+                                @if ($pegawai->suamiistri->count() !== 0)
+                                    <!-- row 2 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Nama
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->suamiistri as $psi)
+                                                <span class="badge badge-primary">{{ $psi->nama_istri_suami }}</span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 3 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Tempat Lahir
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->suamiistri as $psi)
+                                                <span class="badge badge-primary">{{ $psi->t_lahir }} </span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Tanggal Lahir
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->suamiistri as $psi)
+                                                <span class="badge badge-primary">{{ $psi->tgl_lahir }} </span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 4 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Jenis Kelamin
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->suamiistri as $psi)
+                                                <span class="badge badge-primary">
+                                                    @if ($psi->jns_kelamin == 'L')
+                                                        Laki-laki
+                                                    @else
+                                                        Perempuan
+                                                    @endif
+                                                </span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 5 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Pendidikan
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->suamiistri as $psi)
+                                                @foreach ($psi->pendidikan as $pendidikan)
+                                                    <span
+                                                        class="badge badge-primary">{{ $pendidikan->pendidikan }}</span>
+                                                @endforeach
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 6 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Status Tunjangan
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->suamiistri as $psi)
+                                                <span class="badge badge-primary">{{ $psi->sts_tunjangan }}<span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 7 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Tanggal Pernikahan
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->suamiistri as $psi)
+                                                <span class="badge badge-primary">{{ $psi->tgl_menikah }}</span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 8 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Keterangan
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->suamiistri as $psi)
+                                                <span class="badge badge-primary">{{ $psi->ket }}</span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    @if (Auth::user()->role == 1 || Auth::user()->role == 3)
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#ModalSuami"><i class="fa fa-plus"></i>
+                                        </button>
+                                    @endif
+                                @else
+                                    Belum ada data Suami istri .
+                                    @if (Auth::user()->role == 1 || Auth::user()->role == 3)
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#ModalSuami"><i class="fa fa-plus"></i>
+                                        </button>
+                                    @endif
+
+                                @endif
+                                <!-- card shadow -->
+                            </div>
+                            <!-- col -->
+                        </div>
+
+                    </div>
+                    <!-- End Panel Data Istri -->
+
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">
+                        <div class="col-md-10">
+                            <div class="card shadow mb-4 p-3">
+                                @if ($pegawai->anak->count() !== 0)
+                                    <!-- row 2 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Nama
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->anak as $anak)
+                                                <span class="badge badge-primary">{{ $anak->nama_anak }}</span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 3 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Tempat, Tanggal Lahir
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->anak as $anak)
+                                                <span class="badge badge-primary">{{ $anak->t_lahir }}</span>
+                                                @endforeach , @foreach ($pegawai->anak as $anak)
+                                                    <span class="badge badge-primary">{{ $anak->tgl_lair }}</span>
+                                                @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 4 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Jenis Kelamin
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->anak as $anak)
+                                                <span class="badge badge-primary">{{ $anak->jns_kelamin }} <span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 5 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Pendidikan
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->anak as $anak)
+                                                @foreach ($anak->pendidikan as $pdd)
+                                                    <span class="badge badge-primary">{{ $pdd->pendidikan }}</span>
+                                                @endforeach
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 6 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Status Tunjangan
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->anak as $anak)
+                                                <span class="badge badge-primary">{{ $anak->sts_tunjangan }}</span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 7 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Status Pernikahan
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->anak as $anak)
+                                                <span class="badge badge-primary">{{ $anak->sts_menikah }}</span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 8 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4"> Keterangan
+                                        </div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->anak as $anak)
+                                                <span class="badge badge-primary">{{ $anak->ket }}</span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 3)
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#ModalAnak"><i class="fa fa-plus"></i>
+                                        </button>
+                                    @endif
+                                @else
+                                    Belum ada data anak.
+                                    @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 3)
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#ModalAnak"><i class="fa fa-plus"></i>
+                                        </button>
+                                    @endif
+                                @endif
+                                <!-- card shadow -->
+                            </div>
+                            <!-- col -->
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">
+
+                        <div class="col-md-10">
+                            <div class="card shadow mb-4 p-3">
+                                @if ($pegawai->orangtua->count() !== 0)
+                                    <!-- row 2 -->
+                                    <div class="row">
+                                        <div class="col-md-4"> Nama Orang Tua</div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->orangtua as $org)
+                                                {{ $org->nama_ortu }}
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- row 3 -->
+                                    <div class="row">
+                                        <div class="col-md-4"> Tempat, Tanggal Lahir Orang Tua</div>
+                                        <div class="col-md-8"> : @foreach ($pegawai->orangtua as $org)
+                                                {{ $org->t_lahir }}
+                                                @endforeach, @foreach ($pegawai->orangtua as $org)
+                                                    {{ $org->tgl_lahir }}
+                                                @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- row 4 -->
+                                    <div class="row">
+                                        <div class="col-md-4">Jenis Kelamin</div>
+                                        <div class="col-md-8"> :
+                                            @foreach ($pegawai->orangtua as $org)
+                                                {{ $org->jns_kelamin }}
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- row 5 -->
+                                    <div class="row">
+                                        <div class="col-md-4"> Alamat</div>
+                                        <div class="col-md-8"> :
+                                            @foreach ($pegawai->orangtua as $org)
+                                                {{ $org->alamat }}
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- row 6 -->
+                                    <div class="row">
+                                        <div class="col-md-4"> Pekerjaan</div>
+                                        <div class="col-md-8"> :
+                                            @foreach ($pegawai->orangtua as $org)
+                                                {{ $org->pekerjaan }}
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <!-- row 7 -->
+
+                                    <div class="row">
+                                        <div class="col-md-4">Keterangan</div>
+                                        <div class="col-md-8"> :
+                                            @foreach ($pegawai->orangtua as $org)
+                                                {{ $org->ket }}
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 3)
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#ModalOrtu"><i class="fa fa-plus"></i></button>
+                                    @endif
+                                @else
+                                    Belum ada data orangtua.
+                                    @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 3)
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#ModalOrtu"><i class="fa fa-plus"></i></button>
+                                    @endif
+                                @endif
+                                <!-- card shadow -->
+                            </div>
+                            <!-- col -->
+                        </div>
+
+                    </div>
+                </div>
+            </div> --}}
+            <div class="col-xl-8 mb-3" style="margin-left:20rem; margin-top: -40rem;">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <!-- Panel Data Lengkap -->
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <div class="col-md-12">
+                            <div class="card shadow pl-5 pr-5">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary text-center">Data Lengkap
+                                        {{ $pegawai->nama }}</h6>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-4"> Profile Photo</div>
+                                    <div class="col-md-8"> : <img src="../../foto/{{ $pegawai->foto }}"
+                                            width="180px" />
+                                    </div>
+                                </div>
+                                <!-- row NIP -->
+                                <div class="row">
+                                    <div class="col-md-4"> Unit Kerja
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->unitkerja->nama_unit }}
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- row Nama -->
+                                <div class="row">
+                                    <div class="col-md-4"> Nama
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->nama }}
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- row Tempat Tanggal Lahir -->
+                                <div class="row">
+                                    <div class="col-md-4"> Tempat, Tanggal Lahir
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->t_lahir }},
+                                        {{ $pegawai->tgl_lahir }}
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!-- row Alamat -->
+                                <div class="row">
+                                    <div class="col-md-4"> Alamat
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->alamat }}
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!-- row Agama -->
+                                <div class="row">
+                                    <div class="col-md-4"> Agama
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->agama->agama }}
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- row Jenis Kelamin -->
+                                <div class="row">
+                                    <div class="col-md-4"> Jenis Kelamin
+                                    </div>
+                                    <div class="col-md-8"> : @if ($pegawai->jns_kelamin == 'L')
+                                            Laki-laki
+                                        @else
+                                            Perempuan
+                                        @endif
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!-- row Thn Msk Yahya -->
+                                <div class="row">
+                                    <div class="col-md-4"> Tahun Masuk yahya
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->thmsk }}
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!-- row Thn Sertifkasi -->
+                                <div class="row">
+                                    <div class="col-md-4"> Tahun Sertifikasi
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->sertifikasi }}
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!-- row Status Pernikahan -->
+                                <div class="row">
+                                    <div class="col-md-4"> Status Pernikahan
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->sts_marital }}
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!-- row Status Kepegawaian -->
+                                <div class="row">
+                                    <div class="col-md-4"> Status Kepegawaian
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->sts_pegawai }}
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!-- row Pendidikan -->
+                                <div class="row">
+                                    <div class="col-md-4"> Pendidikan
+                                    </div>
+                                    <div class="col-md-8"> : @foreach ($pegawai->pendidikan as $pp)
+                                            <span class="badge badge-primary">{{ $pp->pendidikan }}</span>
+                                            {{ $pegawai->jurusan }}
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!-- row No. Telp -->
+                                <div class="row">
+                                    <div class="col-md-4"> No. Telp
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->no_telp }}
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- row Mata Pelajaran -->
+                                <div class="row">
+                                    <div class="col-md-4"> Mata Pelajaran
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->mapel }}
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- row Mengajar -->
+                                <div class="row">
+                                    <div class="col-md-4">Mengajar
+                                    </div>
+                                    <div class="col-md-8"> : {{ $pegawai->mengajar }}
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- card shadow -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Panel Data Lengkap -->
+
+                    <!-- Panel Data Istri -->
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
 
                         <div class="col-md-10">
                             <div class="card shadow mb-4 p-3">
@@ -530,33 +1058,6 @@
                 </div>
             </div>
 
-            <!-- Riwayat Pegawai -->
-            @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 2)
-                <div class="col-md-4,5">
-                    <div class="card shadow">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary text-center">Riwayat</h6>
-                        </div>
-                        <div class="card-body">
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#ModalDiklat">Diklat</button>
-                            <button type="button" class="btn btn-success" data-toggle="modal"
-                                data-target="#ModalGapok">Gapok</button>
-                            <button type="button" class="btn btn-warning" data-toggle="modal"
-                                data-target="#ModalHukuman">Hukuman</button>
-                            <hr>
-                            <!-- row 2 -->
-                            <button type="button" class="btn btn-danger" data-toggle="modal"
-                                data-target="#ModalJabatan">Jabatan</button>
-                            <button type="button" class="btn btn-info" data-toggle="modal"
-                                data-target="#ModalJabatanfungsional">Jabatan Fungsional</button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal"
-                                data-target="#ModalJabatanfungsionaltambahan">Jabatan Tambahan</button>
-                        </div>
-                    </div>
-                </div>
-            @endif
-            <!-- row -->
         </div>
     </div>
 
@@ -796,8 +1297,8 @@
                 <div class="modal-body">
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                                aria-controls="pills-home" aria-selected="true">Home</a>
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                                role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="pills-tambah-tab" data-toggle="pill" href="#pills-tambah"
@@ -932,7 +1433,8 @@
                                         <label>Jenis Diklat</label>
                                         <select name="jenis_diklat" class="form-control" required>
                                             @foreach ($diklat as $dikl)
-                                                <option value="{{ $dikl->kode_diklat }}">{{ $dikl->jenis_diklat }}
+                                                <option value="{{ $dikl->kode_diklat }}">
+                                                    {{ $dikl->jenis_diklat }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -990,7 +1492,8 @@
                             </form>
                             <!-- end tambah data diklat -->
                         </div>
-                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                            aria-labelledby="pills-contact-tab">
                             @if ($edit !== null)
                                 <!-- start hapus diklat -->
                                 @foreach ($pegawai->riwayatdiklat as $rd)
@@ -1035,8 +1538,8 @@
                                 role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
                             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
                                 role="tab" aria-controls="nav-profile" aria-selected="false">Tambah</a>
-                            <a class="nav-item nav-link" id="nav-hapus-tab" data-toggle="tab" href="#nav-hapus" role="tab"
-                                aria-controls="nav-hapus" aria-selected="false">Hapus</a>
+                            <a class="nav-item nav-link" id="nav-hapus-tab" data-toggle="tab" href="#nav-hapus"
+                                role="tab" aria-controls="nav-hapus" aria-selected="false">Hapus</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
@@ -1154,7 +1657,8 @@
                                             <label>Gaji Pokok</label>
                                             <select name="kode_gapok" class="form-control">
                                                 @foreach ($gapok as $gp)
-                                                    <option value="{{ $gp->kode_gapok }}">{{ $gp->gapok }}</option>
+                                                    <option value="{{ $gp->kode_gapok }}">{{ $gp->gapok }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -1548,7 +2052,8 @@
                             </div>
                             <!-- end home jabatan -->
                         </div>
-                        <div class="tab-pane fade" id="nav-profile2" role="tabpanel" aria-labelledby="nav-profile-tab2">
+                        <div class="tab-pane fade" id="nav-profile2" role="tabpanel"
+                            aria-labelledby="nav-profile-tab2">
 
                             <div class="card p-3">
                                 <!-- card -->
@@ -1577,7 +2082,8 @@
                                             <label>Jabatan Struktural</label>
                                             <select name="kode_jbts" class="form-control">
                                                 @foreach ($jbts as $jb)
-                                                    <option value="{{ $jb->kode_jbts }}">{{ $jb->nama_jabatan }}
+                                                    <option value="{{ $jb->kode_jbts }}">
+                                                        {{ $jb->nama_jabatan }}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -1593,7 +2099,8 @@
                                             <label>Golongan</label>
                                             <select name="kode_gol" class="form-control">
                                                 @foreach ($gol as $g)
-                                                    <option value="{{ $g->kode_gol }}">{{ $g->pangkat }}</option>
+                                                    <option value="{{ $g->kode_gol }}">{{ $g->pangkat }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -1623,7 +2130,9 @@
                                         method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id_peg" value="{{ $rjbt->id_peg }}">
-                                        <button type="submit" class="btn btn-danger btn-sm m-2">Hapus riwayat dgn no. sk
+                                        <button type="submit" class="btn btn-danger btn-sm m-2">Hapus riwayat dgn
+                                            no.
+                                            sk
                                             {{ $rjbt->no_sk }}</button>
                                     </form>
                                 @endforeach
@@ -1643,8 +2152,8 @@
     <!-- end modal jabatan -->
 
     <!-- start modal jabatan lain -->
-    <div class="modal fade" id="ModalJabatanfungsional" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="ModalJabatanfungsional" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1656,10 +2165,12 @@
                 <div class="modal-body">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab3" data-toggle="tab" href="#nav-home3"
-                                role="tab" aria-controls="nav-home3" aria-selected="true">Home</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab3" data-toggle="tab" href="#nav-profile3"
-                                role="tab" aria-controls="nav-profile3" aria-selected="false">Tambah</a>
+                            <a class="nav-item nav-link active" id="nav-home-tab3" data-toggle="tab"
+                                href="#nav-home3" role="tab" aria-controls="nav-home3"
+                                aria-selected="true">Home</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab3" data-toggle="tab"
+                                href="#nav-profile3" role="tab" aria-controls="nav-profile3"
+                                aria-selected="false">Tambah</a>
                             <a class="nav-item nav-link" id="nav-hapus-tab3" data-toggle="tab" href="#nav-hapus3"
                                 role="tab" aria-controls="nav-hapus3" aria-selected="false">Hapus</a>
                         </div>
@@ -1702,7 +2213,8 @@
                                         </div>
                                         <div class="col-md-7">
                                             : @foreach ($pegawai->riwayatjabatanf as $rjbtf)
-                                                <span class="badge badge-primary"> {{ $rjbtf->jabatanfungsional->ket }}
+                                                <span class="badge badge-primary">
+                                                    {{ $rjbtf->jabatanfungsional->ket }}
                                                 </span>
                                             @endforeach
                                         </div>
@@ -1787,7 +2299,8 @@
                             </div>
                             <!-- end home jabtan lain -->
                         </div>
-                        <div class="tab-pane fade" id="nav-profile3" role="tabpanel" aria-labelledby="nav-profile-tab3">
+                        <div class="tab-pane fade" id="nav-profile3" role="tabpanel"
+                            aria-labelledby="nav-profile-tab3">
                             <div class="card p-3">
                                 <!-- card -->
                                 {{-- <form action="/pegawai/jabatanfungsional/tambah" method="post"> --}}
@@ -1831,7 +2344,8 @@
                                             <label>Golongan</label>
                                             <select name="kode_gol" class="form-control">
                                                 @foreach ($gol as $g)
-                                                    <option value="{{ $g->kode_gol }}">{{ $g->pangkat }}</option>
+                                                    <option value="{{ $g->kode_gol }}">{{ $g->pangkat }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -1861,7 +2375,9 @@
                                     <form action="{{ route('pegawai.jabatanfungsional.hapus') }}" method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id_peg" value="{{ $rjbtf->id_peg }}">
-                                        <button type="submit" class="btn btn-danger btn-sm m-2">Hapus Jabatan dgn no. sk
+                                        <button type="submit" class="btn btn-danger btn-sm m-2">Hapus Jabatan dgn
+                                            no.
+                                            sk
                                             {{ $rjbtf->no_sk }}</button>
                                     </form>
                                 @endforeach
@@ -1894,10 +2410,12 @@
                 <div class="modal-body">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab31" data-toggle="tab" href="#nav-home31"
-                                role="tab" aria-controls="nav-home31" aria-selected="true">Home</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab31" data-toggle="tab" href="#nav-profile31"
-                                role="tab" aria-controls="nav-profile31" aria-selected="false">Tambah</a>
+                            <a class="nav-item nav-link active" id="nav-home-tab31" data-toggle="tab"
+                                href="#nav-home31" role="tab" aria-controls="nav-home31"
+                                aria-selected="true">Home</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab31" data-toggle="tab"
+                                href="#nav-profile31" role="tab" aria-controls="nav-profile31"
+                                aria-selected="false">Tambah</a>
                             <a class="nav-item nav-link" id="nav-hapus-tab31" data-toggle="tab" href="#nav-hapus31"
                                 role="tab" aria-controls="nav-hapus31" aria-selected="false">Hapus</a>
                         </div>
@@ -2027,7 +2545,8 @@
                             </div>
                             <!-- end home jabtan lain -->
                         </div>
-                        <div class="tab-pane fade" id="nav-profile31" role="tabpanel" aria-labelledby="nav-profile-tab31">
+                        <div class="tab-pane fade" id="nav-profile31" role="tabpanel"
+                            aria-labelledby="nav-profile-tab31">
                             <div class="card p-3">
                                 <!-- card -->
                                 {{-- <form action="/pegawai/jabatanfungsionalt/tambah" method="post"> --}}
@@ -2055,7 +2574,8 @@
                                             <label>Jabatan Tambahan</label>
                                             <select name="kode_jbtft" class="form-control">
                                                 @foreach ($jbtft as $j)
-                                                    <option value="{{ $j->kode_jbtft }}">{{ $j->tugas_tambahan }}
+                                                    <option value="{{ $j->kode_jbtft }}">
+                                                        {{ $j->tugas_tambahan }}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -2077,7 +2597,8 @@
                                 <!-- end card -->
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="nav-hapus31" role="tabpanel" aria-labelledby="nav-hapus-tab31">
+                        <div class="tab-pane fade" id="nav-hapus31" role="tabpanel"
+                            aria-labelledby="nav-hapus-tab31">
                             @if ($pegawai->riwayatjabatanft->count() !== 0)
                                 <!-- start hapus diklat -->
                                 @foreach ($pegawai->riwayatjabatanft as $rjbtft)
@@ -2086,7 +2607,8 @@
                                         method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id_peg" value="{{ $rjbtft->id_peg }}">
-                                        <button type="submit" class="btn btn-danger btn-sm m-2">Hapus data dgn no. sk
+                                        <button type="submit" class="btn btn-danger btn-sm m-2">Hapus data dgn no.
+                                            sk
                                             {{ $rjbtft->no_sk }}</button>
                                     </form>
                                 @endforeach

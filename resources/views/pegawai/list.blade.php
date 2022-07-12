@@ -1,4 +1,4 @@
-@extends('layouts.induk')
+@extends('layouts.fix')
 @section('title', 'SKYPEG - Dashboard')
 @section('konten')
     <div class="container-fluid">
@@ -32,7 +32,8 @@
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Name: activate to sort column descending">Foto</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
-                                            colspan="1" aria-label="Position: activate to sort column ascending">Unit Kerja
+                                            colspan="1" aria-label="Position: activate to sort column ascending">Unit
+                                            Kerja
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                             colspan="1" aria-label="Office: activate to sort column ascending">Nama</th>
@@ -110,8 +111,9 @@
                                                         @endif
                                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" id="home-tab" data-toggle="tab"
-                                                                    href="#home{{ $p->id_peg }}" role="tab"
+                                                                <a class="nav-link active" id="home-tab"
+                                                                    data-toggle="tab" href="#home{{ $p->id_peg }}"
+                                                                    role="tab"
                                                                     aria-controls="home{{ $p->id_peg }}"
                                                                     aria-selected="true">Home</a>
                                                             </li>
@@ -161,8 +163,8 @@
                                                                         <div class="form-group col-md-6">
                                                                             <label for="inputNama">Nama</label>
                                                                             <input type="text" class="form-control"
-                                                                                value="{{ $p->nama }}" id="inputNama"
-                                                                                name="nama" required>
+                                                                                value="{{ $p->nama }}"
+                                                                                id="inputNama" name="nama" required>
                                                                         </div>
                                                                     </div>
 
@@ -201,7 +203,8 @@
                                                                         <div class="form-group col-md-5">
                                                                             <label for="inputNoTelp">No.Telp</label>
                                                                             <input type="number" id="inputNoTelp"
-                                                                                name="no_telp" value="{{ $p->no_telp }}"
+                                                                                name="no_telp"
+                                                                                value="{{ $p->no_telp }}"
                                                                                 class="form-control">
                                                                         </div>
 
@@ -224,8 +227,8 @@
 
                                                                     <div class="form-row mb-3">
                                                                         <label for="inputAlamat">Alamat</label>
-                                                                        <input type="text" id="inputAlamat" name="alamat"
-                                                                            value="{{ $p->alamat }}"
+                                                                        <input type="text" id="inputAlamat"
+                                                                            name="alamat" value="{{ $p->alamat }}"
                                                                             class="form-control">
                                                                     </div>
 
@@ -263,7 +266,8 @@
                                                                             class="form-control" required>
                                                                             <option selected>Pilih Agama</option>
                                                                             @foreach ($agama as $agama2)
-                                                                                <option value="{{ $agama2->kode_agama }}"
+                                                                                <option
+                                                                                    value="{{ $agama2->kode_agama }}"
                                                                                     @if ($p->kode_agama == $agama2->kode_agama) selected @endif>
                                                                                     {{ $agama2->agama }}</option>
                                                                             @endforeach
@@ -287,7 +291,8 @@
                                                                     <div class="form-group col-md-6">
                                                                         <label for="inputNip">Nama Sekolah</label>
                                                                         <input type="text" class="form-control"
-                                                                            id="inputNip" value="{{ $p->nama_sekolah }}"
+                                                                            id="inputNip"
+                                                                            value="{{ $p->nama_sekolah }}"
                                                                             name="namasekolah" required>
                                                                     </div>
                                                                 </div>
@@ -301,8 +306,8 @@
                                                                     </div>
                                                                     <div class="form-group col-md-4">
                                                                         <label for="inputAskes">Fakultas</label>
-                                                                        <input type="text" name="fakultas" id="inputAskes"
-                                                                            value="{{ $p->fakultas }}"
+                                                                        <input type="text" name="fakultas"
+                                                                            id="inputAskes" value="{{ $p->fakultas }}"
                                                                             class="form-control" required>
                                                                     </div>
                                                                     <!-- form row -->
@@ -321,14 +326,14 @@
                                                                         {{-- <label for="inputKarpeg">Hobi</label> --}}
                                                                         <label for="thmsk">Tahun Masuk Yahya</label>
                                                                         <input type="text" value="{{ $p->thmsk }}"
-                                                                            name="thmsk" id="thmsk" class="form-control"
-                                                                            required>
+                                                                            name="thmsk" id="thmsk"
+                                                                            class="form-control" required>
                                                                     </div>
                                                                     <div class="form-group col-md-4">
                                                                         <label for="inputAskes">Tahun Sertifikasi</label>
                                                                         <input type="year" name="sertifikasi"
-                                                                            value="{{ $p->sertifikasi }}" id="inputAskes"
-                                                                            class="form-control" required>
+                                                                            value="{{ $p->sertifikasi }}"
+                                                                            id="inputAskes" class="form-control" required>
                                                                     </div>
                                                                     <!-- form row -->
                                                                 </div>
@@ -382,14 +387,14 @@
                                                                     <div class="form-group col-md-6">
                                                                         <label for="inputKarpeg">Mata Pelajaran</label>
                                                                         <input type="text" value="{{ $p->mapel }}"
-                                                                            name="mapel" id="mapel" class="form-control"
-                                                                            required>
+                                                                            name="mapel" id="mapel"
+                                                                            class="form-control" required>
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label for="inputAskes">Mengajar</label>
-                                                                        <input type="text" value="{{ $p->mengajar }}"
-                                                                            name="mengajar" id="inputAskes"
-                                                                            class="form-control" required>
+                                                                        <input type="text"
+                                                                            value="{{ $p->mengajar }}" name="mengajar"
+                                                                            id="inputAskes" class="form-control" required>
                                                                     </div>
                                                                     <!-- form row -->
                                                                 </div>
@@ -620,17 +625,19 @@
                                                     </div>
                                                     <div class="form-group col-md-5">
                                                         <label for="thmsk">Masuk Yahya</label>
-                                                        <input type="text" name="thmsk" id="thmsk" class="form-control"
-                                                            required>
+                                                        <input type="text" name="thmsk" id="thmsk"
+                                                            class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="sertifikasi">Tahun Sertifikasi</label>
-                                                        <input type="number" min="0" max="2099" name="sertifikasi"
-                                                            id="sertifikasi" class="form-control" required>
+                                                        <input type="number" min="0" max="2099"
+                                                            name="sertifikasi" id="sertifikasi" class="form-control"
+                                                            required>
                                                     </div>
                                                     <div class="form-group col-md-5">
                                                         <label for="user">User</label>
-                                                        <select name="user" id="user" class="form-control" required>
+                                                        <select name="user" id="user" class="form-control"
+                                                            required>
                                                             <option selected>Pilih Jenis User</option>
                                                             @foreach ($user as $u)
                                                                 <option value="{{ $u->id }}">{{ $u->name }}
@@ -649,7 +656,8 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="jbts">Jabatan Struktural</label>
-                                                        <select name="jbts" id="jbts" class="form-control" required>
+                                                        <select name="jbts" id="jbts" class="form-control"
+                                                            required>
                                                             <option selected>Pilih Jabatan Struktural</option>
                                                             @foreach ($jbts as $jbts)
                                                                 <option value="{{ $jbts->kode_jbts }}">
@@ -669,8 +677,8 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="mapel">Mata Pelajaran</label>
-                                                        <input type="text" name="mapel" id="mapel" class="form-control"
-                                                            required>
+                                                        <input type="text" name="mapel" id="mapel"
+                                                            class="form-control" required>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="mengajar">Mengajar</label>
@@ -700,7 +708,4 @@
             </div>
         </div>
     </div>
-    </div>
-
-
 @endsection

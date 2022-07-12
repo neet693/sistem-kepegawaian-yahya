@@ -1,4 +1,4 @@
-@extends('layouts.induk')
+@extends('layouts.fix')
 @section('title', 'SKYPEG - Pendidikan')
 @section('konten')
     <div class="container-fluid">
@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="card p-3">
+        <div class="card p-3 mb-3">
             <!-- card -->
 
             <div class="table-responsive">
@@ -55,6 +55,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
