@@ -1,4 +1,4 @@
-@extends('layouts.induk')
+@extends('layouts.fix')
 @section('title', 'Direktur Dashboard')
 @section('konten')
 

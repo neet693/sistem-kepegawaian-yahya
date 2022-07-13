@@ -2,7 +2,6 @@
 @section('title', 'Dashboard')
 @section('konten')
 
-
     <!-- Begin Page Content -->
     <div class="container-fluid">
 

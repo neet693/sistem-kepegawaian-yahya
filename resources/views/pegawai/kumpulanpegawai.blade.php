@@ -1,12 +1,10 @@
-@extends('layouts.induk')
+@extends('layouts.fix')
 @section('title', 'Dashboard Pegawai')
 @section('konten')
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- row Pegawai Baru -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="{{ asset('/css/seluruhpegawai.css') }}">
 
         <div class="container">
             <div class="row justify-content-center">
