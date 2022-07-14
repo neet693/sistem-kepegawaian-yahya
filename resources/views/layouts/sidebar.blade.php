@@ -6,7 +6,7 @@
                 <div class="sidebar-brand-icon">
                     <img src="{{ asset('img/logo-gram-sky.png') }}" alt="Logo" style="width: 50px">
                 </div>
-                <div class="sidebar-brand-text text-white mx-3">SKYPEG</div>
+                <div class="sidebar-brand-text text-white mx-3">SKY SIMPEG</div>
             </a>
 
             <!-- Heading -->
