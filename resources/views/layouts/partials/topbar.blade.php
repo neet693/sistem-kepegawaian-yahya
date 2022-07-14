@@ -6,7 +6,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <h3 class="text-primary">Dashboard <i style="color:#0BB5EA">SKY</i> PEG </h3>
+                    <h3 class="text-primary">Dashboard <i style="color:#0BB5EA">SKY</i> SIMPEG </h3>
 
                     <ul class="navbar-nav ml-auto">
 
