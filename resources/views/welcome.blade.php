@@ -9,7 +9,7 @@
                 <div class="col-lg-8">
                     <div class="banner-content text-center">
                         <img src="{{ asset('img/logo-yahya.png') }}" alt="Logo Yahya" style="width: 200px">
-                        <h1 class="brand brand-name text-white"><i style="color:#0BB5EA">SKY</i> PEG
+                        <h1 class="brand brand-name text-white"><i style="color:#0BB5EA">SKY</i> SIMPEG
                         </h1>
                         <p class="text-uppercase text-white">Sistem Informasi Kepegawaian Sekolah Kristen Yahya</p>
                         <a href="{{ route('login') }}" class="primary-btn banner-btn">Masuk</a>
