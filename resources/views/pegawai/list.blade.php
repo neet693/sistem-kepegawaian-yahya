@@ -25,25 +25,28 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <table class="table table-bordered dataTable" id="dataTable" role="grid"
-                                aria-describedby="dataTable_info" style="width: 100%;" width="100%" cellspacing="0">
+                                aria-describedby="dataTable_info" cellspacing="0">
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1"
                                             colspan="1" aria-sort="ascending"
                                             aria-label="Name: activate to sort column descending">Foto</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
-                                            colspan="1" aria-label="Position: activate to sort column ascending">Unit
+                                            colspan="1" style="width: 5rem"
+                                            aria-label="Position: activate to sort column ascending">Unit
                                             Kerja
                                         </th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                             colspan="1" aria-label="Office: activate to sort column ascending">Nama</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
-                                            colspan="1" aria-label="Office: activate to sort column ascending">TTL</th>
+                                            colspan="1" style="width: 10rem"
+                                            aria-label="Office: activate to sort column ascending">Tempat
+                                            Tanggal Lahir</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                             colspan="1" aria-label="Office: activate to sort column ascending">JK</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
-                                            colspan="1" style="width: 100px;"
-                                            aria-label="Office: activate to sort column ascending">No.Telp</th>
+                                            colspan="1" aria-label="Office: activate to sort column ascending">No.Telp
+                                        </th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                             colspan="1" aria-label="Office: activate to sort column ascending">Aksi</th>
                                 </thead>
@@ -60,7 +63,7 @@
                                             </td>
                                             <td>{{ $p->unitkerja->nama_unit }}</td>
                                             <td>{{ $p->nama }}</td>
-                                            <td>{{ $p->t_lahir }}, {{ $p->tgl_lahir }}</td>
+                                            <td>{{ $p->t_lahir }}, {{ $p->tgl_lahir->format('j F Y') }}</td>
                                             <td>
                                                 @if ($p->jns_kelamin == 'L')
                                                     Laki-laki

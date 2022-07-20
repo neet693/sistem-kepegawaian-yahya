@@ -24,7 +24,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Data Master
             </div>
 
             <!-- Nav Item - Role dibawah Admin -->
@@ -32,12 +32,28 @@
                 <li class="nav-item {{ request()->is('seluruhpegawai') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('seluruhpegawai') }}">
                         <i class="fas fa-users"></i>
-                        <span>Pegawai</span></a>
+                        <span>Seluruh Pegawai</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Pegawai per Unit</span>
+                    </a>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="{{ route('agama.list') }}">Unit TK</a>
+                            <a class="collapse-item" href="{{ route('unitkerja.list') }}">Unit SD</a>
+                            <a class="collapse-item" href="{{ route('pendidikan.list') }}">Unit SMP</a>
+                            <a class="collapse-item" href="{{ route('diklat.list') }}">Unit SMA</a>
+                        </div>
+                    </div>
                 </li>
             @else
                 @if (Auth::user()->role_id == 3 || Auth::user()->role_id == 4)
-                    <li class="nav-item {{ request()->is('kumpulanpegawai') ? 'active' : '' }} " data-toggle="tooltip"
-                        data-placement="right">
+                    <li class="nav-item {{ request()->is('kumpulanpegawai') ? 'active' : '' }} "
+                        data-toggle="tooltip" data-placement="right">
                         <div class=" shadow-lg">
                             <a class="nav-link collapsed text-white" href="{{ route('kumpulanpegawai') }}">
                                 <i class="fas fa-users text-white"></i>

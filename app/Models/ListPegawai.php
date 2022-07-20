@@ -9,6 +9,7 @@ class ListPegawai extends Model
 {
     use HasFactory;
     protected $table = 'pegawai';
+    protected $dates = ['tgl_lahir'];
 
 
     public function jabatanstruktural()

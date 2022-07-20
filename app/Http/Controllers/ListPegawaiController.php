@@ -27,17 +27,24 @@ class ListPegawaiController extends Controller
     public function beranda()
     {
         $pegawai = ListPegawai::with(['naikkgb', 'naikkgb.gapok'])->orderBy('id_peg', 'DESC')->limit(5)->get();
-
         $total_pegawai = ListPegawai::all()->count();
         $total_user = User::all()->count();
         $lk = ListPegawai::where('jns_kelamin', 'L')->count();
         $pr = ListPegawai::where('jns_kelamin', 'P')->count();
+        $tk = ListPegawai::where('kode_unitkerja', '1')->count();
+        $sd = ListPegawai::where('kode_unitkerja', '2')->count();
+        $smp = ListPegawai::where('kode_unitkerja', '3')->count();
+        $sma = ListPegawai::where('kode_unitkerja', '4')->count();
         return view('pegawai.index', [
             'pegawai' => $pegawai,
             'total_pegawai' => $total_pegawai,
             'total_user' => $total_user,
             'lk' => $lk,
-            'pr' => $pr
+            'pr' => $pr,
+            'tk' => $tk,
+            'sd' => $sd,
+            'smp' => $smp,
+            'sma' => $sma,
         ]);
         // return dd($peg);
         // return response()->json(['data' => $pegawai]);
@@ -77,14 +84,17 @@ class ListPegawaiController extends Controller
         }
     }
 
-    public function direkturpegawai()
+    public function direkturpegawai(Request $request)
     {
 
         $pegawai = ListPegawai::with('unitkerja')->get();
         $user = User::all();
+        $ukrj = UnitKerja::all();
+
         return view('direktur.seluruhpegawai', [
             'pegawai' => $pegawai,
             'user' => $user,
+            'ukrj' => $ukrj,
         ]);
     }
 
@@ -101,6 +111,8 @@ class ListPegawaiController extends Controller
         // Return the search view with the resluts compacted
         return view('direktur.seluruhpegawai', compact('pegawai'));
     }
+
+
 
     public function tambah(Request $request)
     {
