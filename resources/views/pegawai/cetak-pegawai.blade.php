@@ -29,14 +29,14 @@
     <div class="container">
         <div class="main-body">
             <div class="row">
-                <div class="col-12">
-                    <div class="text-center text-150">
-                        <img src="{{ asset('img/logo-yahya.png') }}" class="bg-gradient-info" alt="Logo Yahya">
-                    </div>
+                <div class="col-md-12 mx-auto">
+                    <img src="{{ asset('img/new-logo-yahya.png') }}" alt="Logo Yahya" style="max-width: 100%">
                 </div>
             </div>
             <hr>
-            <h1 class="text-center text-150">CETAK PEGAWAI</h1>
+            <div class="col-md-12 mx-auto">
+                <h1 class="text-center text-150">CETAK DETAIL PEGAWAI</h1>
+            </div>
             <div class="row gutters-sm">
                 <div class="col-md-4 mb-3">
                     <div class="card">
