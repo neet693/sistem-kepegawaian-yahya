@@ -48,13 +48,6 @@
                                     <p class="text-secondary mb-1"><i class="fa fa-phone"></i>
                                         {{ $pegawai->no_telp }}</p>
                                     <p class="text-muted font-size-sm mb-3">{{ $pegawai->alamat }}</p>
-                                    {{-- <button type="button" class="btn btn-primary">
-                                        Unit Kerja <span
-                                            class="badge badge-light">{{ $pegawai->unitkerja->nama_unit }}</span>
-                                        <span class="sr-only">unread messages</span>
-                                    </button>
-                                    <button class="btn btn-primary">Follow</button>
-                                    <button class="btn btn-outline-primary">Message</button> --}}
                                     <button class="btn btn-primary">Unit Kerja
                                         {{ $pegawai->unitkerja->nama_unit }}</button>
                                 </div>
@@ -79,7 +72,7 @@
                                     <h6 class="mb-0">Tempat Tanggal Lahir</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    {{ $pegawai->t_lahir }}, {{ $pegawai->tgl_lahir }}
+                                    {{ $pegawai->t_lahir }}, {{ $pegawai->tgl_lahir->format('j F Y') }}
                                 </div>
                             </div>
                             <hr>
