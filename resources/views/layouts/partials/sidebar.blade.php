@@ -43,10 +43,10 @@
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="{{ route('agama.list') }}">Unit TK</a>
-                            <a class="collapse-item" href="{{ route('unitkerja.list') }}">Unit SD</a>
-                            <a class="collapse-item" href="{{ route('pendidikan.list') }}">Unit SMP</a>
-                            <a class="collapse-item" href="{{ route('diklat.list') }}">Unit SMA</a>
+                            <a class="collapse-item" href="{{ route('pegawaitk') }}">Unit TK</a>
+                            <a class="collapse-item" href="{{ route('pegawaisd') }}">Unit SD</a>
+                            <a class="collapse-item" href="{{ route('pegawaismp') }}">Unit SMP</a>
+                            <a class="collapse-item" href="{{ route('pegawaisma') }}">Unit SMA</a>
                         </div>
                     </div>
                 </li>

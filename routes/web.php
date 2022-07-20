@@ -147,4 +147,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Cari Pegawai
     Route::get('/search', [ListPegawaiController::class, 'search'])->name('search');
+
+    //Pegawai Per Unit
+    Route::get('/pegawaitk', [ListPegawaiController::class, 'pegawaitk'])->name('pegawaitk');
+    Route::get('/pegawaisd', [ListPegawaiController::class, 'pegawaisd'])->name('pegawaisd');
+    Route::get('/pegawaismp', [ListPegawaiController::class, 'pegawaismp'])->name('pegawaismp');
+    Route::get('/pegawaisma', [ListPegawaiController::class, 'pegawaisma'])->name('pegawaisma');
 });
