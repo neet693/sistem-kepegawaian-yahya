@@ -29,7 +29,7 @@
                                 <div class="advisor_thumb"><img src="foto/{{ $p->foto }}" alt="Foto Pegawai">
                                     <!-- Button -->
                                     <div class="social-info">
-                                        @if (Auth::user()->role_id == 3)
+                                        @if (Auth::user()->role_id == 2)
                                             <a href="/pegawai/profile/{{ $p->id_peg }}" target="_blank"><i
                                                     class="fa fa-address-card-o"></i></a>
                                             <a href="/pegawai/cetak/{{ $p->id_peg }}"><i class="fa fa-print"></i></a>
