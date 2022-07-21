@@ -299,8 +299,7 @@
                                         </div>
                                         <div class="col-md-8"> : @foreach ($pegawai->suamiistri as $psi)
                                                 @foreach ($psi->pendidikan as $pendidikan)
-                                                    <span
-                                                        class="badge badge-primary">{{ $pendidikan->pendidikan }}</span>
+                                                    <span class="badge badge-primary">{{ $pendidikan->pendidikan }}</span>
                                                 @endforeach
                                             @endforeach
                                         </div>
@@ -911,8 +910,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             : @foreach ($pegawai->riwayatdiklat as $rd)
-                                                <a class="btn btn-primary btn-sm" {{-- href="/pegawai/riwayatdiklat/editpage/{{ $rd->id_diklat }}/{{ $pegawai->id_peg }}">Edit</a> --}}
-                                                    href="{{ route('pegawai.diklat.editpage', $rd->id_diklat, $pegawai->id_peg) }}">Edit</a>
+                                                <a class="btn btn-primary btn-sm"
+                                                    href="/pegawai/riwayatdiklat/editpage/{{ $rd->id_diklat }}/{{ $pegawai->id_peg }}">Edit</a>
                                             @endforeach
                                         </div>
                                     </div>
