@@ -1,5 +1,5 @@
 @extends('layouts.fix')
-@section('title', 'Direktur Dashboard')
+@section('title', 'SKY SIMPEG - Seluruh Pegawai')
 @section('konten')
 
     <!-- Begin Page Content -->
@@ -34,32 +34,6 @@
                     </div>
                 </div>
             </div>
-
-            {{-- <div class="row justify-content-center">
-                <div class="col-12 col-sm-8 col-lg-6 mb-3">
-                    <!-- Section Heading-->
-                    <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s"
-                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                        <form action="{{ route('filter_unit') }}" method="GET"
-                            class="d-none
-                        d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group">
-                                <select name="kode_unitkerja" id="kode_unitkerja">
-                                    <option value="">Kode Unit</option>
-                                    @foreach ($ukrj as $item)
-                                        <option value="{{ $item->kode_unitkerja }}">{{ $item->nama_unit }}</option>
-                                    @endforeach
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> --}}
 
             <div class="row mb-3">
                 <a href="{{ route('seluruhpegawai') }}" class="btn btn-success btn-icon-split">

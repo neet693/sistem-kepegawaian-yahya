@@ -1,5 +1,5 @@
 @extends('layouts.fix')
-@section('title', 'Dashboard')
+@section('title', 'SKY SIMPEG - Dashboard')
 @section('konten')
 
     <!-- Begin Page Content -->
@@ -22,6 +22,72 @@
                 <!-- Card Content - Collapse -->
                 <div class="collapse show" id="collapseCardExample">
                     <div class="card-body">
+                        <!-- row perunit -->
+                        <div class="row mb-4">
+                            <!-- Row 1,1-->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card border-bottom-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
+                                                    Guru Unit TK</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $tk }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 2,1-->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card border-bottom-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
+                                                    Guru Unit SD</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sd }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 3,1-->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card border-bottom-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
+                                                    Guru Unit SMP</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $smp }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 4,1-->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card border-bottom-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
+                                                    Guru Unit SMA</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sma }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- row akun -->
                         <div class="row mb-4">
                             <!-- Card Laki - Laki -->
@@ -105,72 +171,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- row perunit -->
-                        <div class="row mb-4">
-                            <!-- Row 1,1-->
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card border-bottom-primary shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit TK</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $tk }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <!-- Row 2,1-->
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card border-bottom-primary shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit SD</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sd }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Row 3,1-->
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card border-bottom-primary shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit SMP</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $smp }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Row 4,1-->
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card border-bottom-primary shadow h-100 py-2">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit SMA</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sma }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

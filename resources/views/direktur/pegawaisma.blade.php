@@ -1,5 +1,5 @@
 @extends('layouts.fix')
-@section('title', 'Dashboard Pegawai')
+@section('title', 'SKY SIMPEG - List Pegawai SMA')
 @section('konten')
 
     <!-- Begin Page Content -->
