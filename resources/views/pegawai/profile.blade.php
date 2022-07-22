@@ -61,7 +61,7 @@
                         <div class="card-body">
                             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                                 aria-orientation="horizontal">
-                                @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 2)
+                                @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 2 || Auth::user()->role_id == 3)
                                     <button type="button" class="btn btn-primary mb-2" data-toggle="modal"
                                         data-target="#ModalDiklat">Diklat</button>
                                     <button type="button" class="btn btn-success mb-2" data-toggle="modal"
@@ -83,6 +83,7 @@
                 </div>
             </div>
 
+            <!-- Isi data Pegawai -->
             <div class="col-xl-8 mb-3" style="margin-left:20rem; margin-top: -39rem;">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- Panel Data Lengkap -->
@@ -788,6 +789,7 @@
     </div>
     <!-- End Modal ortu -->
 
+    <!-- Awal Modal Riwayat pegawai -->
     <!-- Modal diklat -->
     <div class="modal fade" id="ModalDiklat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">

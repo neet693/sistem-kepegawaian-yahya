@@ -41,7 +41,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">1+</span>
+                                <span class="badge badge-danger badge-counter">2+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -60,6 +60,20 @@
                                             {{ date('D,d M Y') }}
                                         </div>
                                         <span class="font-weight-bold">Selamat Datang {{ Auth::user()->name }}</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="img/SIMPEG_SKY_Manual Book.pdf"
+                                    download="SIMPEG_SKY_Manual Book.pdf" target="-blank">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">
+                                            {{ date('D,d M Y') }}
+                                        </div>
+                                        <span class="font-weight-bold">Klik disini untuk mengunduh Manual Book</span>
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All

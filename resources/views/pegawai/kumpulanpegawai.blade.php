@@ -13,7 +13,6 @@
                     <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s"
                         style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                         <h3>List Pegawai <span> Sekolah Kristen Yahya</span></h3>
-                        {{-- <p>Appland is completely creative, lightweight, clean &amp; super responsive app landing page.</p> --}}
                         <div class="line"></div>
                     </div>
                 </div>
