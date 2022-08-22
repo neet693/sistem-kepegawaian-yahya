@@ -153,4 +153,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pegawaisd', [ListPegawaiController::class, 'pegawaisd'])->name('pegawaisd');
     Route::get('/pegawaismp', [ListPegawaiController::class, 'pegawaismp'])->name('pegawaismp');
     Route::get('/pegawaisma', [ListPegawaiController::class, 'pegawaisma'])->name('pegawaisma');
+    Route::get('/pegawaiit', [ListPegawaiController::class, 'pegawaiit'])->name('pegawaiit');
+    Route::get('/pegawaiproyeksarpras', [ListPegawaiController::class, 'pegawaiproyeksarpras'])->name('pegawaiproyeksarpras');
+    Route::get('/pegawaitupusat', [ListPegawaiController::class, 'pegawaitupusat'])->name('pegawaitupusat');
 });

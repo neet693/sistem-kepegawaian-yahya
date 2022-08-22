@@ -47,13 +47,16 @@
                             <a class="collapse-item" href="{{ route('pegawaisd') }}">Unit SD</a>
                             <a class="collapse-item" href="{{ route('pegawaismp') }}">Unit SMP</a>
                             <a class="collapse-item" href="{{ route('pegawaisma') }}">Unit SMA</a>
+                            <a class="collapse-item" href="{{ route('pegawaiit') }}">Unit IT DEPARTMENT</a>
+                            <a class="collapse-item" href="{{ route('pegawaiproyeksarpras') }}">Unit PROYEK SARPRAS</a>
+                            <a class="collapse-item" href="{{ route('pegawaitupusat') }}">Unit TU PUSAT</a>
                         </div>
                     </div>
                 </li>
             @else
                 @if (Auth::user()->role_id == 3 || Auth::user()->role_id == 4)
-                    <li class="nav-item {{ request()->is('kumpulanpegawai') ? 'active' : '' }} "
-                        data-toggle="tooltip" data-placement="right">
+                    <li class="nav-item {{ request()->is('kumpulanpegawai') ? 'active' : '' }} " data-toggle="tooltip"
+                        data-placement="right">
                         <div class=" shadow-lg">
                             <a class="nav-link collapsed text-white" href="{{ route('kumpulanpegawai') }}">
                                 <i class="fas fa-users text-white"></i>

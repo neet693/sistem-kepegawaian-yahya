@@ -148,6 +148,54 @@ class ListPegawaiController extends Controller
         }
     }
 
+    public function pegawaiit()
+    {
+        $pegawai = ListPegawai::with('unitkerja')->get();
+        $user = User::all();
+        $jbts = JabatanStruktural::all();
+        if (Auth::user()->role = '3' || Auth::user()->role = '4') {
+            return view('direktur.pegawaiit', [
+                'pegawai' => $pegawai,
+                'user' => $user,
+                'jbts' => $jbts
+            ]);
+        } else {
+            return 'Data tidak ditemukan';
+        }
+    }
+
+    public function pegawaiproyeksarpras()
+    {
+        $pegawai = ListPegawai::with('unitkerja')->get();
+        $user = User::all();
+        $jbts = JabatanStruktural::all();
+        if (Auth::user()->role = '3' || Auth::user()->role = '4') {
+            return view('direktur.pegawaiproyeksarpras', [
+                'pegawai' => $pegawai,
+                'user' => $user,
+                'jbts' => $jbts
+            ]);
+        } else {
+            return 'Data tidak ditemukan';
+        }
+    }
+
+    public function pegawaitupusat()
+    {
+        $pegawai = ListPegawai::with('unitkerja')->get();
+        $user = User::all();
+        $jbts = JabatanStruktural::all();
+        if (Auth::user()->role = '3' || Auth::user()->role = '4') {
+            return view('direktur.pegawaitupusat', [
+                'pegawai' => $pegawai,
+                'user' => $user,
+                'jbts' => $jbts
+            ]);
+        } else {
+            return 'Data tidak ditemukan';
+        }
+    }
+
     public function direkturpegawai(Request $request)
     {
 

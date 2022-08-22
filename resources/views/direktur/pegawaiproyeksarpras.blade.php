@@ -1,5 +1,5 @@
 @extends('layouts.fix')
-@section('title', 'SIMPEG SKY - List Pegawai SMP')
+@section('title', 'SIMPEG SKY - List Pegawai PROYEK SARPRAS')
 @section('konten')
 
     <!-- Begin Page Content -->
@@ -21,7 +21,7 @@
             <div class="row">
                 @if ($pegawai->isNotEmpty())
                     @foreach ($pegawai as $p)
-                        @if ($p->unitkerja->nama_unit == 'SMP')
+                        @if ($p->unitkerja->nama_unit == 'PROYEK SARPRAS')
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s"
                                     style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
