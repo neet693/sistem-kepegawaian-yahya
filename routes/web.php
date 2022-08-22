@@ -51,34 +51,34 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/pegawai/suamiistri/tambah/proses', [SuamiistriController::class, 'proses'])->name('suamiistri.tambah');
 
     Route::post('/pegawai/diklat/tambah', [DiklatController::class, 'tambah'])->name('pegawai.diklat.tambah');
-    // Route::post('/pegawai/diklat/edit/{id}', [DiklatController::class, 'edit']);
+    Route::post('/pegawai/diklat/edit/{id}', [DiklatController::class, 'edit']);
     Route::post('/pegawai/diklat/hapus/{id_diklat}', [DiklatController::class, 'hapus'])->name('pegawai.diklat.hapus');
     Route::get('/pegawai/riwayatdiklat/editpage/{id_diklat}/{id_peg}', [DiklatController::class, 'editpage'])->name('pegawai.diklat.editpage');
 
 
     Route::post('/pegawai/gapok/tambah', [RiwayatGapokController::class, 'tambah'])->name('pegawai.gapok.tambah');
-    // Route::post('/pegawai/gapok/edit/{id}', [RiwayatGapokController::class, 'edit']);
+    Route::post('/pegawai/gapok/edit/{id}', [RiwayatGapokController::class, 'edit']);
     Route::get('/pegawai/gapok/editpage/{id_gapok}/{id_peg}', [RiwayatGapokController::class, 'editpage'])->name('pegawai.gapok.editpage');
     Route::post('/pegawai/gapok/hapus/{id_gapok}', [RiwayatGapokController::class, 'hapus'])->name('pegawai.gapok.hapus');
 
     Route::post('/pegawai/hukuman/tambah', [RiwayatHukumanController::class, 'tambah'])->name('pegawai.hukuman.tambah');
     Route::get('/pegawai/hukuman/editpage/{id_hukuman}/{id_pegawai}', [RiwayatHukumanController::class, 'editpage'])->name('pegawai.hukuman.editpage');
-    // Route::post('/pegawai/hukuman/edit/{id}', [RiwayatHukumanController::class, 'edit']);
+    Route::post('/pegawai/hukuman/edit/{id}', [RiwayatHukumanController::class, 'edit']);
     Route::post('/pegawai/hukuman/hapus/{id_hukuman}', [RiwayatHukumanController::class, 'hapus'])->name('pegawai.hukuman.hapus');
 
     Route::post('/pegawai/jabatan/tambah', [RiwayatJabatanController::class, 'tambah'])->name('pegawai.jabatan.tambah');
     Route::get('/pegawai/jabatan/editpage/{id_jabatan}/{id_peg}', [RiwayatJabatanController::class, 'editpage'])->name('pegawai.jabatan.editpage');
-    // Route::post('/pegawai/jabatan/edit/{id}', [RiwayatJabatanController::class, 'edit']);
+    Route::post('/pegawai/jabatan/edit/{id}', [RiwayatJabatanController::class, 'edit']);
     Route::post('/pegawai/jabatan/hapus/{id_jabatan}', [RiwayatJabatanController::class, 'hapus'])->name('pegawai.jabatan.hapus');
 
     Route::post('/pegawai/jabatanfungsional/tambah', [RiwayatJabatanfController::class, 'tambah'])->name('pegawai.jabatanfungsional.tambah');
     Route::post('/pegawai/jabatanfungsional/hapus/{id_jabatanf}', [RiwayatJabatanfController::class, 'hapus'])->name('pegawai.jabatanfungsional.hapus');
     Route::get('/pegawai/jabatanfungsional/editpage/{id_jabatanf}/{id_peg}', [RiwayatJabatanfController::class, 'editpage'])->name('pegawai.jabatanfungsional.editpage');
-    // Route::post('/pegawai/jabatanfungsional/edit/{id}', [RiwayatJabatanfController::class], 'edit');
+    Route::post('/pegawai/jabatanfungsional/edit/{id}', [RiwayatJabatanfController::class], 'edit');
 
     Route::post('/pegawai/jabatanfungsionalt/tambah', [RiwayatJabatanftController::class, 'tambah'])->name('pegawai.jabatanfungsionalt.tambah');
     Route::get('/pegawai/jabatanfungsionalt/editpage/{id_jbtft}/{id_peg}', [RiwayatJabatanftController::class, 'editpage'])->name('pegawai.jabatanfungsionalt.editpage');
-    // Route::post('/pegawai/jabatanfungsionalt/edit/{id}', [RiwayatJabatanftController::class, 'edit']);
+    Route::post('/pegawai/jabatanfungsionalt/edit/{id}', [RiwayatJabatanftController::class, 'edit']);
     Route::post('/pegawai/jabatanfungsionalt/hapus/{id_jbtft}', [RiwayatJabatanftController::class, 'hapus'])->name('pegawai.jabatanfungsionalt.hapus');
 
     // Start Route Group TM
