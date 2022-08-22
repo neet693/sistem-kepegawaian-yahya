@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'SKYPEG - Login')
+@section('title', 'SIMPEG SKY - Login')
 @section('content')
     <!-- Custom fonts for this template-->
     <link href="{{ asset('/sbadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -21,7 +21,7 @@
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block" style="background-image: url({{ asset('img/banner-yahya.jpg') }}); background-size: contain; background-repeat: no-repeat;"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">

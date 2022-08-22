@@ -38,6 +38,6 @@ class TmJabatanstrukturalController extends Controller
         Alert::success('Sukses Hapus', 'Data berhasil dihapus');
 
         // alihkan halaman ke halaman pegawai
-        return redirect("/pegawai/tmjabatans/tambah");
+        return  redirect()->back();
     }
 }

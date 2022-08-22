@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="DeyDey" content="">
-    <title>SKYPEG - Cetak Pegawai</title>
+    <title>SKY SIMPEG - Cetak Pegawai</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('/sbadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -35,7 +35,7 @@
             </div>
             <hr>
             <div class="col-md-12 mx-auto">
-                <h1 class="text-center text-150">CETAK DETAIL PEGAWAI</h1>
+                <h1 class="text-center text-150"> PROFIL PEGAWAI</h1>
             </div>
             <div class="row gutters-sm">
                 <div class="col-md-4 mb-3">

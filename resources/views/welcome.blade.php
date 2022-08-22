@@ -1,5 +1,5 @@
 @extends('luar.induk')
-@section('title', 'SKYPEG - Home')
+@section('title', 'SIMPEG SKY - Home')
 @section('content')
     <!-- Start Banner Area -->
     <section class="banner-area relative">
@@ -8,8 +8,8 @@
             <div class="row fullscreen justify-content-center align-items-center">
                 <div class="col-lg-8">
                     <div class="banner-content text-center">
-                        <img src="{{ asset('img/logo-yahya.png') }}" alt="Logo Yahya" style="width: 200px">
-                        <h1 class="brand brand-name text-white"><i style="color:#0BB5EA">SKY</i> SIMPEG
+                        <img src="{{ asset('img/logo-gram-sky.png') }}" alt="Logo Yahya" style="width: 70px">
+                        <h1 class="brand brand-name text-white">SIMPEG <i style="color:#0BB5EA">SKY</i>
                         </h1>
                         <p class="text-uppercase text-white">Sistem Informasi Kepegawaian Sekolah Kristen Yahya</p>
                         <a href="{{ route('login') }}" class="primary-btn banner-btn">Masuk</a>

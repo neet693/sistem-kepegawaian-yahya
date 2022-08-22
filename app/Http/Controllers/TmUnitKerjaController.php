@@ -21,11 +21,11 @@ class TmUnitKerjaController extends Controller
     public function tambah(Request $request)
     {
         $ukerja = new UnitKerja;
-        $ukerja->nama = $request->nama;
+        $ukerja->nama_unit = $request->nama_unit;
         $ukerja->save();
 
         Alert::success('Penambahan Berhasil', 'Agama ' . $ukerja->nama . ' berhasil ditambahkan');
-        return redirect("/pegawai/tmunitkerja/tambah");
+        return redirect()->back();
     }
 
 
@@ -37,6 +37,6 @@ class TmUnitKerjaController extends Controller
         Alert::success('Sukses Hapus', 'Data berhasil dihapus');
 
         // alihkan halaman ke halaman pegawai
-        return redirect("/pegawai/tmunitkerja/tambah");
+        return redirect()->back();
     }
 }

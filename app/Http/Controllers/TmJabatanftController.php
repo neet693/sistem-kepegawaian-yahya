@@ -25,7 +25,7 @@ class TmJabatanftController extends Controller
         $agm->save();
 
         Alert::success('Sukses Tambah', 'Data berhasil ditambahkan');
-        return redirect("/pegawai/tmjabatanft/tambah");
+        return redirect()->back();
     }
 
 
@@ -37,6 +37,6 @@ class TmJabatanftController extends Controller
         Alert::success('Sukses Hapus', 'Data berhasil dihapus');
 
         // alihkan halaman ke halaman pegawai
-        return redirect("/pegawai/tmjabatanft/tambah");
+        return redirect()->back();
     }
 }

@@ -26,7 +26,7 @@ class TmAgamaController extends Controller
         $agm->save();
 
         Alert::success('Penambahan Berhasil', 'Agama ' . $agm->agama . ' berhasil ditambahkan');
-        return redirect("/pegawai/tmagama/tambah");
+        return redirect()->back();
     }
 
 

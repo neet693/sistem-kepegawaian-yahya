@@ -1,5 +1,5 @@
 @extends('layouts.fix')
-@section('title', 'SKYPEG - Jabatan Fungsional')
+@section('title', 'SIMPEG SKY- Jabatan Fungsional')
 @section('konten')
     <div class="container-fluid">
         <div class="row">

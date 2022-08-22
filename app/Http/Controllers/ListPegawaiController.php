@@ -84,6 +84,70 @@ class ListPegawaiController extends Controller
         }
     }
 
+    public function pegawaitk()
+    {
+        $pegawai = ListPegawai::with('unitkerja')->get();
+        $user = User::all();
+        $jbts = JabatanStruktural::all();
+        if (Auth::user()->role = '3' || Auth::user()->role = '4') {
+            return view('direktur.pegawaitk', [
+                'pegawai' => $pegawai,
+                'user' => $user,
+                'jbts' => $jbts
+            ]);
+        } else {
+            return 'Data tidak ditemukan';
+        }
+    }
+
+    public function pegawaisd()
+    {
+        $pegawai = ListPegawai::with('unitkerja')->get();
+        $user = User::all();
+        $jbts = JabatanStruktural::all();
+        if (Auth::user()->role = '3' || Auth::user()->role = '4') {
+            return view('direktur.pegawaisd', [
+                'pegawai' => $pegawai,
+                'user' => $user,
+                'jbts' => $jbts
+            ]);
+        } else {
+            return 'Data tidak ditemukan';
+        }
+    }
+
+    public function pegawaismp()
+    {
+        $pegawai = ListPegawai::with('unitkerja')->get();
+        $user = User::all();
+        $jbts = JabatanStruktural::all();
+        if (Auth::user()->role = '3' || Auth::user()->role = '4') {
+            return view('direktur.pegawaismp', [
+                'pegawai' => $pegawai,
+                'user' => $user,
+                'jbts' => $jbts
+            ]);
+        } else {
+            return 'Data tidak ditemukan';
+        }
+    }
+
+    public function pegawaisma()
+    {
+        $pegawai = ListPegawai::with('unitkerja')->get();
+        $user = User::all();
+        $jbts = JabatanStruktural::all();
+        if (Auth::user()->role = '3' || Auth::user()->role = '4') {
+            return view('direktur.pegawaisma', [
+                'pegawai' => $pegawai,
+                'user' => $user,
+                'jbts' => $jbts
+            ]);
+        } else {
+            return 'Data tidak ditemukan';
+        }
+    }
+
     public function direkturpegawai(Request $request)
     {
 

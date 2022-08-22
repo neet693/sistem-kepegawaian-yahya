@@ -25,7 +25,7 @@ class TmGolonganController extends Controller
         $agm->save();
 
         Alert::success('Sukses Tambah', 'Data berhasil ditambahkan');
-        return redirect("/pegawai/tmgolongan/tambah");
+        return  redirect()->back();
     }
 
 
@@ -37,6 +37,6 @@ class TmGolonganController extends Controller
         Alert::success('Sukses Hapus', 'Data berhasil dihapus');
 
         // alihkan halaman ke halaman pegawai
-        return redirect("/pegawai/tmgolongan/tambah");
+        return redirect()->back();
     }
 }

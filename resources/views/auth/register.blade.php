@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'SKYPEG - Register')
+@section('title', 'SIMPEG SKY - Register')
 @section('content')
     <!-- Custom fonts for this template-->
     <link href="{{ asset('/sbadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -20,7 +20,7 @@
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-5 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-5 d-none d-lg-block bg-register-image" style="background-image: url({{ asset('img/banner-yahya.jpg') }}); background-size: cover; background-repeat: no-repeat;"></div>
                         <div class="col-lg-7">
                             <div class="p-5">
                                 <div class="text-center">

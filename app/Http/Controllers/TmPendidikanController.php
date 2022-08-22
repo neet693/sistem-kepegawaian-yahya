@@ -26,7 +26,7 @@ class TmPendidikanController extends Controller
         $pdd->save();
 
         Alert::success('Penambahan Berhasil', 'Pendidikan ' . $pdd->pendidikan . ' berhasil ditambahkan');
-        return redirect("/pegawai/tmpendidikan/tambah");
+        return redirect()->back();
     }
 
 
@@ -38,6 +38,6 @@ class TmPendidikanController extends Controller
         Alert::success('Sukses Hapus', 'Data berhasil dihapus');
 
         // alihkan halaman ke halaman pegawai
-        return redirect("/pegawai/tmpendidikan/tambah");
+        return redirect()->back();
     }
 }

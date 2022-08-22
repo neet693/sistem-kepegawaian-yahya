@@ -1,5 +1,5 @@
 @extends('layouts.fix')
-@section('title', 'SKYPEG - Unit Kerja')
+@section('title', 'SIMPEG SKY - Unit Kerja')
 @section('konten')
     <div class="container-fluid">
         <div class="row">
@@ -72,7 +72,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Agama</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Unit</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -85,7 +85,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Nama Unit</label>
-                                    <input type="text" name="agama" class="form-control">
+                                    <input type="text" name="nama_unit" class="form-control">
                                 </div>
                             </div>
 
