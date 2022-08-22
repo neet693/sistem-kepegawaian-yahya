@@ -36,11 +36,11 @@
 
                     // Add data
                     chart.data = [{
-                            country: "Unit TKK",
+                            country: "Unit TK",
                             litres: {{ $akat }}
                         },
                         {
-                            country: "Unit SDK",
+                            country: "Unit SD",
                             litres: {{ $bkat }}
                         },
                         {
@@ -50,6 +50,18 @@
                         {
                             country: "Unit SMA",
                             litres: {{ $dkat }}
+                        },
+                        {
+                            country: "Unit IT DEPARTMENT",
+                            litres: {{ $ekat }}
+                        },
+                        {
+                            country: "Unit PROYEK SARPRAS",
+                            litres: {{ $fkat }}
+                        },
+                        {
+                            country: "Unit TU PUSAT",
+                            litres: {{ $gkat }}
                         }
                     ];
 

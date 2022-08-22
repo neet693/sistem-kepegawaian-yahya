@@ -35,6 +35,9 @@ class ListPegawaiController extends Controller
         $sd = ListPegawai::where('kode_unitkerja', '2')->count();
         $smp = ListPegawai::where('kode_unitkerja', '3')->count();
         $sma = ListPegawai::where('kode_unitkerja', '4')->count();
+        $it = ListPegawai::where('kode_unitkerja', '5')->count();
+        $proyeksarpras = ListPegawai::where('kode_unitkerja', '6')->count();
+        $tupusat = ListPegawai::where('kode_unitkerja', '7')->count();
         return view('pegawai.index', [
             'pegawai' => $pegawai,
             'total_pegawai' => $total_pegawai,
@@ -45,6 +48,9 @@ class ListPegawaiController extends Controller
             'sd' => $sd,
             'smp' => $smp,
             'sma' => $sma,
+            'it' => $it,
+            'proyeksarpras' => $proyeksarpras,
+            'tupusat' => $tupusat,
         ]);
         // return dd($peg);
         // return response()->json(['data' => $pegawai]);

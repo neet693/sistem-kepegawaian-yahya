@@ -19,6 +19,9 @@ class GrafikController extends Controller
         $bkat = ListPegawai::where('kode_unitkerja', '2')->count();
         $ckat = ListPegawai::where('kode_unitkerja', '3')->count();
         $dkat = ListPegawai::where('kode_unitkerja', '4')->count();
+        $ekat = ListPegawai::where('kode_unitkerja', '5')->count();
+        $fkat = ListPegawai::where('kode_unitkerja', '6')->count();
+        $gkat = ListPegawai::where('kode_unitkerja', '7')->count();
         return view('pegawai.grafik', [
             'lk' => $lk,
             'pr' => $pr,
@@ -27,7 +30,10 @@ class GrafikController extends Controller
             'akat' => $akat,
             'bkat' => $bkat,
             'ckat' => $ckat,
-            'dkat' => $dkat
+            'dkat' => $dkat,
+            'ekat' => $ekat,
+            'fkat' => $fkat,
+            'gkat' => $gkat,
         ]);
     }
 }

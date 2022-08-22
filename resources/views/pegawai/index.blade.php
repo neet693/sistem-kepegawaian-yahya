@@ -87,6 +87,54 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Row 5,1-->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card border-bottom-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
+                                                    Guru Unit IT</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $it }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 6,1-->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card border-bottom-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
+                                                    Guru Unit PROYEK SARPRAS</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $proyeksarpras }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Row 7,1-->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card border-bottom-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
+                                                    Guru Unit TU PUSAT</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $tupusat }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <!-- row akun -->
                         <div class="row mb-4">
