@@ -31,7 +31,7 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit TK</div>
+                                                    Unit TK</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $tk }}
                                                 </div>
                                             </div>
@@ -47,7 +47,7 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit SD</div>
+                                                    Unit SD</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sd }}
                                                 </div>
                                             </div>
@@ -63,7 +63,7 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit SMP</div>
+                                                    Unit SMP</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $smp }}
                                                 </div>
                                             </div>
@@ -79,7 +79,7 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit SMA</div>
+                                                    Unit SMA</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sma }}
                                                 </div>
                                             </div>
@@ -95,7 +95,7 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit IT</div>
+                                                    Unit IT</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $it }}
                                                 </div>
                                             </div>
@@ -111,7 +111,7 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit PROYEK SARPRAS</div>
+                                                    Unit PROYEK SARPRAS</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $proyeksarpras }}
                                                 </div>
                                             </div>
@@ -126,7 +126,7 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-grey text-uppercase mb-1">
-                                                    Guru Unit TU PUSAT</div>
+                                                    Unit TU PUSAT</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $tupusat }}
                                                 </div>
                                             </div>
