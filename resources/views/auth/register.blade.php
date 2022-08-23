@@ -20,7 +20,9 @@
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-5 d-none d-lg-block bg-register-image" style="background-image: url({{ asset('img/banner-yahya.jpg') }}); background-size: cover; background-repeat: no-repeat;"></div>
+                        <div class="col-lg-5 d-none d-lg-block bg-register-image"
+                            style="background-image: url({{ asset('img/banner-yahya.jpg') }}); background-size: cover; background-repeat: no-repeat;">
+                        </div>
                         <div class="col-lg-7">
                             <div class="p-5">
                                 <div class="text-center">
@@ -89,10 +91,10 @@
                                             <select name="ukrj_nama" id="ukrj_nama" class="form-control" required>
                                                 <option value="admin">Saya Adalah Admin</option>
                                                 <option value="direktur">Saya Adalah Direktur</option>
-                                                <option value="TKK">TKK</option>
-                                                <option value="SDK">SDK</option>
-                                                <option value="SMPK">SMPK</option>
-                                                <option value="SMAK">SMAK</option>
+                                                <option value="TK">TK</option>
+                                                <option value="SD">SD</option>
+                                                <option value="SMP">SMP</option>
+                                                <option value="SMA">SMA</option>
                                             </select>
                                         </div>
                                     </div>
