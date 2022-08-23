@@ -82,7 +82,7 @@
                                             <select name="role_id" id="role_id" class="form-control" required>
                                                 <option value="1">Admin</option>
                                                 <option value="2">Direktur</option>
-                                                <option value="3">Kepala Sekolah</option>
+                                                <option value="3">Kepala Sekolah / Kepala Unit</option>
                                                 <option value="4">Pegawai</option>
                                             </select>
                                         </div>
@@ -95,6 +95,9 @@
                                                 <option value="SD">SD</option>
                                                 <option value="SMP">SMP</option>
                                                 <option value="SMA">SMA</option>
+                                                <option value="IT DEPARTMEN">IT DEPARTMENT</option>
+                                                <option value="PROYEK SARPRAS">PROYEK SARPRAS</option>
+                                                <option value="TU PUSAT">TU PUSAT</option>
                                             </select>
                                         </div>
                                     </div>
