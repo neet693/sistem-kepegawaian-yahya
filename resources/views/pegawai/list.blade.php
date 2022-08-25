@@ -91,7 +91,6 @@
 
 
                                         <!-- modal edit -->
-
                                         <div class="modal fade" id="ModalEdit{{ $p->id_peg }}" tabindex="-1"
                                             role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
@@ -118,25 +117,25 @@
                                                                     data-toggle="tab" href="#home{{ $p->id_peg }}"
                                                                     role="tab"
                                                                     aria-controls="home{{ $p->id_peg }}"
-                                                                    aria-selected="true">Home</a>
+                                                                    aria-selected="true">Umum</a>
                                                             </li>
                                                             <li class="nav-item">
                                                                 <a class="nav-link" id="profile-tab" data-toggle="tab"
                                                                     href="#profile{{ $p->id_peg }}" role="tab"
                                                                     aria-controls="profile{{ $p->id_peg }}"
-                                                                    aria-selected="false">Detail 1</a>
+                                                                    aria-selected="false">Pendidikan</a>
                                                             </li>
                                                             <li class="nav-item">
                                                                 <a class="nav-link" id="contact-tab" data-toggle="tab"
                                                                     href="#contact{{ $p->id_peg }}" role="tab"
                                                                     aria-controls="contact{{ $p->id_peg }}"
-                                                                    aria-selected="false">Detail 2</a>
+                                                                    aria-selected="false">Terkait Yahya</a>
                                                             </li>
                                                             <li class="nav-item">
                                                                 <a class="nav-link" id="mapel-tab" data-toggle="tab"
                                                                     href="#mapel{{ $p->id_peg }}" role="tab"
                                                                     aria-controls="mapel{{ $p->id_peg }}"
-                                                                    aria-selected="false">Detail 3</a>
+                                                                    aria-selected="false">Mapel dan Mengajar</a>
                                                             </li>
                                                         </ul>
                                                         <div class="tab-content" id="myTabContent">
@@ -150,24 +149,24 @@
 
                                                                     <!-- Start tab 1 -->
                                                                     <div class="form-row">
-                                                                        <div class="form-group col-md-4">
-                                                                            <label for="inputStatus">Unit Kerja</label>
-                                                                            <select name="unitkerja" id="inputUser"
-                                                                                class="form-control" required>
-                                                                                <option selected>Pilih Unit Kerja</option>
-                                                                                @foreach ($ukrj as $unit)
-                                                                                    <option
-                                                                                        value="{{ $unit->kode_unitkerja }}"
-                                                                                        @if ($p->kode_unitkerja == $unit->kode_unitkerja) selected @endif>
-                                                                                        {{ $unit->nama_unit }}</option>
-                                                                                @endforeach
-                                                                            </select>
-                                                                        </div>
                                                                         <div class="form-group col-md-6">
                                                                             <label for="inputNama">Nama</label>
                                                                             <input type="text" class="form-control"
                                                                                 value="{{ $p->nama }}"
                                                                                 id="inputNama" name="nama" required>
+                                                                        </div>
+                                                                        <div class="form-group col-md-6">
+                                                                            <label for="inputStatus">Agama</label>
+                                                                            <select name="agama" id="inputUser"
+                                                                                class="form-control" required>
+                                                                                <option selected>Pilih Agama</option>
+                                                                                @foreach ($agama as $agama2)
+                                                                                    <option
+                                                                                        value="{{ $agama2->kode_agama }}"
+                                                                                        @if ($p->kode_agama == $agama2->kode_agama) selected @endif>
+                                                                                        {{ $agama2->agama }}</option>
+                                                                                @endforeach
+                                                                            </select>
                                                                         </div>
                                                                     </div>
 
@@ -264,22 +263,6 @@
                                                                 <!-- Tab 2 -->
                                                                 <div class="form-row">
                                                                     <div class="form-group col-md-6">
-                                                                        <label for="inputStatus">Agama</label>
-                                                                        <select name="agama" id="inputUser"
-                                                                            class="form-control" required>
-                                                                            <option selected>Pilih Agama</option>
-                                                                            @foreach ($agama as $agama2)
-                                                                                <option
-                                                                                    value="{{ $agama2->kode_agama }}"
-                                                                                    @if ($p->kode_agama == $agama2->kode_agama) selected @endif>
-                                                                                    {{ $agama2->agama }}</option>
-                                                                            @endforeach
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-6">
                                                                         <label for="inputStatus">Pendidikan</label>
                                                                         <select name="pendidikan" id="inputUser"
                                                                             class="form-control" required>
@@ -294,8 +277,7 @@
                                                                     <div class="form-group col-md-6">
                                                                         <label for="inputNip">Nama Sekolah</label>
                                                                         <input type="text" class="form-control"
-                                                                            id="inputNip"
-                                                                            value="{{ $p->nama_sekolah }}"
+                                                                            id="inputNip" value="{{ $p->nama_sekolah }}"
                                                                             name="namasekolah" required>
                                                                     </div>
                                                                 </div>
@@ -322,11 +304,21 @@
                                                                 role="tabpanel"
                                                                 aria-labelledby="contact-tab{{ $p->id_peg }}">
                                                                 <!-- Tab 3 -->
-
-                                                                <!-- Tab 3 -->
                                                                 <div class="form-row">
                                                                     <div class="form-group col-md-4">
-                                                                        {{-- <label for="inputKarpeg">Hobi</label> --}}
+                                                                        <label for="inputStatus">Unit Kerja</label>
+                                                                        <select name="unitkerja" id="inputUser"
+                                                                            class="form-control" required>
+                                                                            <option selected>Pilih Unit Kerja</option>
+                                                                            @foreach ($ukrj as $unit)
+                                                                                <option
+                                                                                    value="{{ $unit->kode_unitkerja }}"
+                                                                                    @if ($p->kode_unitkerja == $unit->kode_unitkerja) selected @endif>
+                                                                                    {{ $unit->nama_unit }}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group col-md-4">
                                                                         <label for="thmsk">Tahun Masuk Yahya</label>
                                                                         <input type="text" value="{{ $p->thmsk }}"
                                                                             name="thmsk" id="thmsk"
@@ -335,8 +327,8 @@
                                                                     <div class="form-group col-md-4">
                                                                         <label for="inputAskes">Tahun Sertifikasi</label>
                                                                         <input type="year" name="sertifikasi"
-                                                                            value="{{ $p->sertifikasi }}"
-                                                                            id="inputAskes" class="form-control" required>
+                                                                            value="{{ $p->sertifikasi }}" id="inputAskes"
+                                                                            class="form-control" required>
                                                                     </div>
                                                                     <!-- form row -->
                                                                 </div>
@@ -395,9 +387,9 @@
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label for="inputAskes">Mengajar</label>
-                                                                        <input type="text"
-                                                                            value="{{ $p->mengajar }}" name="mengajar"
-                                                                            id="inputAskes" class="form-control" required>
+                                                                        <input type="text" value="{{ $p->mengajar }}"
+                                                                            name="mengajar" id="inputAskes"
+                                                                            class="form-control" required>
                                                                     </div>
                                                                     <!-- form row -->
                                                                 </div>
