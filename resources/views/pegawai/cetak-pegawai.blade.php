@@ -190,10 +190,10 @@
                                             <h6 class="mb-0">Universitas / PT</h6>
                                         </div>
                                         <div class="col-sm text-secondary">
-                                            @if ($pegawai->universitaspt == '')
+                                            @if ($pegawai->nama_sekolah === '-' && $pegawai->nama_sekolah === '')
                                                 Tidak Ada Data
                                             @else
-                                                {{ $pegawai->universitaspt }}
+                                                {{ $pegawai->nama_sekolah }}
                                             @endif
                                         </div>
                                     </div>
