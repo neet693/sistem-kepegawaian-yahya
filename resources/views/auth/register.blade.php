@@ -95,7 +95,7 @@
                                                 <option value="SD">SD</option>
                                                 <option value="SMP">SMP</option>
                                                 <option value="SMA">SMA</option>
-                                                <option value="IT DEPARTMEN">IT DEPARTMENT</option>
+                                                <option value="IT DEPARTMENT">IT DEPARTMENT</option>
                                                 <option value="PROYEK SARPRAS">PROYEK SARPRAS</option>
                                                 <option value="TU PUSAT">TU PUSAT</option>
                                             </select>
