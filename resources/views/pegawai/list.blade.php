@@ -380,7 +380,7 @@
                                                                 <!-- Tab 3 -->
                                                                 <div class="form-row">
                                                                     <div class="form-group col-md-6">
-                                                                        <label for="inputKarpeg">Mata Pelajaran</label>
+                                                                        <label for="inputKarpeg">Pekerjaan (staff) / Mapel (guru)</label>
                                                                         <input type="text" value="{{ $p->mapel }}"
                                                                             name="mapel" id="mapel"
                                                                             class="form-control" required>
@@ -671,7 +671,7 @@
                                                 <!-- Tab 4 -->
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="mapel">Mata Pelajaran</label>
+                                                        <label for="mapel">Pekerjaan (staff) / Mapel (guru)</label>
                                                         <input type="text" name="mapel" id="mapel"
                                                             class="form-control" required>
                                                     </div>
