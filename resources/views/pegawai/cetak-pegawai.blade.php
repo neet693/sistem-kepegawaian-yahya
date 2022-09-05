@@ -161,7 +161,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <h6 class="mb-0">Mata Pelajaran</h6>
+                                            <h6 class="mb-0">Pekerjaan (staff) / Mapel (guru)</h6>
                                         </div>
                                         <div class="col-sm text-secondary">
                                             {{ $pegawai->mapel }}

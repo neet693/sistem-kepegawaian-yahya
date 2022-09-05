@@ -212,9 +212,9 @@
                                     </div>
                                 </div>
                                 <br>
-                                <!-- row Mata Pelajaran -->
+                                <!-- row Pekerjaan (staff) / Mapel (guru) : -->
                                 <div class="row">
-                                    <div class="col-md-4"> Mata Pelajaran
+                                    <div class="col-md-4"> Pekerjaan (staff) / Mapel (guru)
                                     </div>
                                     <div class="col-md-8"> : {{ $pegawai->mapel }}
                                     </div>
